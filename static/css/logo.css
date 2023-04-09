@@ -1,0 +1,13 @@
+#logo-design-image {
+    width: 120px;
+    height: 50px;
+    object-fit: cover;
+    object-position: center center;
+    cursor: pointer;
+    user-select: none;
+}
+@media (max-width: 600px) {
+    #logo-design-image {
+        transform: scale(.9);
+    }
+}

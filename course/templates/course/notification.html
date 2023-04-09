@@ -1,0 +1,42 @@
+{% load static %}
+{% block content %}
+<div id="notification" class="notification-bg sd-cont">
+    <div class="body ss-cont f-col">
+        <div class="head w-full cb-cont">
+            <h2 class="text text-md">Notifications</h2>
+            <button id="cancel-btn" class="cancel-btn button-sm">
+                <i class="icon fa fa-times"></i>
+            </button>
+        </div>
+        <div class="nav w-full cs-cont">
+            <button id="view-all-notification" class="nav-btn">View all</button>
+            <button id="view-unread-notification" class="nav-btn">Unread</button>
+        </div>
+        <div class="contents w-full cc-cont">
+            <div class="all-notifications ss-cont f-col">
+                <div class="item ss-cont">
+                    <img src="{% static 'images/peep-2.jpg' %}" class="img"/>
+                    <div class="info h-full sb-cont f-col">
+                        <p class="text text-sm">You have successfully created a DesignHive account and logged in.</p>
+                        <span class="time text-xsm">Sep 10, 2022 | 22:40 hours</span>
+                    </div>
+                </div>
+                <div class="item ss-cont">
+                    <img src="{% static 'images/peep-1.jpg' %}" class="img"/>
+                    <div class="info h-full sb-cont f-col">
+                        <p class="text text-sm">You have successfully created a DesignHive account and logged in.</p>
+                        <span class="time text-xsm">Sep 10, 2022 | 22:40 hours</span>
+                    </div>
+                </div>
+                <div class="item ss-cont">
+                    <img src="{% static 'images/peep-3.jpg' %}" class="img"/>
+                    <div class="info h-full sb-cont f-col">
+                        <p class="text text-sm">You have successfully created a DesignHive account and logged in.</p>
+                        <span class="time text-xsm">Sep 10, 2022 | 22:40 hours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

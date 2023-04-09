@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesignHive</title>
+    <!-- CSS for main template -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+
+    <!-- CSS for frames template -->
+    <link rel="stylesheet" href="{% static 'css/logo.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/coursenavbar.css' %}" />
+    
+    <!-- CSS for main-view template -->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/courses.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/accountsettings.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/aboutus.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/notification.css' %}" />
+
+    <!-- LINK for font icons -->
+    <link rel="stylesheet" href="{% static 'fontawesome/css/solid.css' %}" />
+    <link rel="stylesheet" href="{% static 'fontawesome/css/brands.css' %}" />
+    <link rel="stylesheet" href="{% static 'fontawesome/css/fontawesome.css' %}" />
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}" />
+    <link rel="stylesheet" href="{% static 'fontawesome/css/v4-shims.css' %}" />
+
+    <!-- LINK for video player -->
+    <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet" />
+</head>
+<body>
+    {% include 'frames/navbar.html' %}
+
+    <div id="main-content" class="content">
+    {% block content %}
+    {% endblock %}
+    </div>
+
+    {% include 'frames/footer.html' %}
+</body>
+
+{% block js %}
+    <!-- FOR COURSES -->
+    <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
+    <script src="{% static 'js/courses.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+{% endblock %}
+</html>

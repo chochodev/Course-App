@@ -1,0 +1,117 @@
+#accountsettings {
+    width: 90vw !important;
+    min-height: 100vh !important;
+    margin: 0 auto;
+    border-right: 1px solid var(--cta-border);
+}
+
+
+/* SETTINGS SECTION */
+#accountsettings .title {
+    height: 4rem;
+    padding: 0 1rem;
+    width: 95% !important;
+    border-bottom: 1px solid var(--cta-border);
+}
+
+#accountsettings .title .text {
+    min-width: max-content !important;
+    color: var(--header-clr);
+}
+
+#accountsettings .title .acc-cta {
+    gap: calc(.5rem + .5vw);
+}
+
+#accountsettings .title .acc-cta .home-btn {
+    background: var(--cta-hover);
+    color: var(--primary-clr);
+}
+
+/* Profile form section */
+#accountsettings .acc-form {
+    width: 70vw;
+    min-width: 25rem;
+    padding: .5rem;
+    border-radius: .5rem;
+}
+
+/* Input section */
+#accountsettings .acc-form .input-div {
+    max-width: 42rem;
+}
+
+#accountsettings .acc-form .acc-change {
+    margin-top: 1rem;
+    gap: 1.375rem;
+}
+
+#accountsettings .acc-form .input-div .label {
+    font-weight: 600;
+    min-width: max-content !important;
+}
+
+#accountsettings .acc-form .input-div .input {
+    max-width: 24rem;
+    width: 100%;
+}
+
+/* for password inputs */
+#accountsettings .acc-form.password-form {
+    margin-bottom: 5rem;
+    gap: 1.375rem;
+}
+
+#accountsettings .acc-form .input-content {
+    position: relative;
+    max-width: 24rem;
+}
+
+#accountsettings .acc-form .input-div .input-content .password.input {
+    width: 100%;
+    height: 100%;
+}
+
+#accountsettings .acc-form .input-div .input-content .eye-btn {
+    position: absolute;
+    right: 0;
+    /* top: 0; */
+    color: var(--primary-clr);
+    border-left: 1px solid var(--cta-border);
+}
+
+/* LINE BREAK */
+#accountsettings .line {
+    position: relative;
+    left: -.5rem;
+    width: 85vw;
+    margin: 2rem 0;
+    border-top: 1px solid var(--cta-border);
+}
+
+/* Image section */
+#accountsettings .acc-form .img-div {
+    position: relative;
+    margin-bottom: 5rem;
+}
+
+#accountsettings .acc-form .img-div .img {
+    width: 6rem;
+    height: 6rem;
+    border: 1px solid var(--cta-border);
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#accountsettings .acc-form .img-div .img-btn {
+    background: #fff !important;
+    color: var(--input-border) !important;
+    border: 1px solid var(--input-border);
+    transform: translateY(-.5rem);
+}
+
+/* DELETE ACCOUNT SECTION */
+#accountsettings .delete-section .delete-btn {
+    font: 400 .8rem var(--main-link-font);
+    color: var(--cta-clr);
+}

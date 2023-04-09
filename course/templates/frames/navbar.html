@@ -1,0 +1,80 @@
+{% load static %}
+
+<div class="navbar cb-cont {% if request.resolver_match.url_name == 'courses' %} close {% endif %}">
+    <div class="logo">{% include 'frames/logo.html' %}
+    </div>
+    <div id="nav-menu" class="menu cb-cont">
+        <div class="menu-bar cc-cont">
+            <i id="menu-bar" class="icon icon-md fa fa-bars-staggered"></i>
+            <i id="close-bar" class="icon icon-md fa fa-times"></i>
+        </div>
+        <div id="bg-modal" class="bg-modal"></div>
+        <div id="menu-list" class="menu-list cc-cont">
+            <a href="{% url 'home' %}" class="link cb-cont {% if request.resolver_match.url_name == 'home' %} active-page {% endif %}">
+                <span id="" class="text link-md">Home</span>
+                <i class="icon fa fa-chevron-right"></i>
+            </a>
+            <a href="{% url 'accountsettings' %}" class="link cb-cont {% if request.resolver_match.url_name == 'accountsettings' %} active-page {% endif %}">
+                <span id="" class="text link-md">Account</span>
+                <i class="icon fa fa-chevron-right"></i>
+            </a>
+            <a href="{% url 'courses' %}" class="link cb-cont {% if request.resolver_match.url_name == 'courses' %} active-page {% endif %}">
+                <span id="" class="text link-md">Course</span>
+                <i class="icon fa fa-chevron-right"></i>
+            </a>
+            <a href="{% url 'about' %}" class="link cb-cont {% if request.resolver_match.url_name == 'about' %} active-page {% endif %}">
+                <span id="" class="text link-md">About Us</span>
+                <i class="icon fa fa-chevron-right"></i>
+            </a>
+            <small class="menu-foot">Copyright 2022 &copy; chochoprogrammer</small>
+        </div>
+        <a href="#" id="notification-link" class="link notification cc-cont">
+            <small class="number"></small>
+            <i class="icon notification-icon fa fa-bell"></i>
+        </a>
+    </div>
+</div>
+
+<div id="notification" class="notification-bg sd-cont">
+    <div class="body ss-cont f-col">
+        <div class="head w-full cb-cont">
+            <h2 class="text text-md">Notifications</h2>
+            <button id="cancel-btn" class="cancel-btn button-sm">
+                <i class="icon fa fa-times"></i>
+            </button>
+        </div>
+        <div class="nav w-full cs-cont">
+            <button id="view-all-notification" class="nav-btn">View all</button>
+            <button id="view-unread-notification" class="nav-btn">Unread</button>
+        </div>
+        <div class="contents w-full cc-cont">
+            <div class="all-notifications ss-cont f-col">
+                <div class="item ss-cont">
+                    <img src="{% static 'images/peep-2.jpg' %}" class="img"/>
+                    <div class="info h-full sb-cont f-col">
+                        <p class="text text-sm">You have successfully created a DesignHive account and logged in.</p>
+                        <span class="time text-xsm">Sep 10, 2022 | 22:40 hours</span>
+                    </div>
+                </div>
+                <div class="item ss-cont">
+                    <img src="{% static 'images/peep-1.jpg' %}" class="img"/>
+                    <div class="info h-full sb-cont f-col">
+                        <p class="text text-sm">You have successfully created a DesignHive account and logged in.</p>
+                        <span class="time text-xsm">Sep 10, 2022 | 22:40 hours</span>
+                    </div>
+                </div>
+                <div class="item ss-cont">
+                    <img src="{% static 'images/peep-3.jpg' %}" class="img"/>
+                    <div class="info h-full sb-cont f-col">
+                        <p class="text text-sm">You have successfully created a DesignHive account and logged in.</p>
+                        <span class="time text-xsm">Sep 10, 2022 | 22:40 hours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block js %}
+    <script src="{% static 'js/navbar.js' %}"></script>
+{% endblock %}

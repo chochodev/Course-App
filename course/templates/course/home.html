@@ -1,0 +1,84 @@
+{% extends 'course/main.html' %}
+{% load static %}
+
+{% block content %}
+<div id="homepage" class="wh-full cc-cont f-col">
+    <div class="main ss-cont wh-full f-col">
+        <h3 class="title header-md">Start Making Progress</h3>
+        <p class="text text-lg">Get started by clicking on any of your preferred course to learn below. Or Continue your online course</p>
+        <a href="{% url 'courses' %}" class="main-button button button-md">Resume Course <i class="icon fa fa-arrow-right"></i></a>
+    </div>
+
+    <div class="courses wh-full cc-cont f-col">
+        <h3 class="text-lg w-max"><b style="color: var(--text-clr);" class="">New here?</b> Start a Course now</h3>
+        <div class="course-list w-full sc-cont">
+            <div class="course wh-max cc-cont f-col">
+                <img src="{% static 'images/peep-1.jpg' %}" class="course-image" />
+                <div class="course-info wh-max cc-cont f-col">
+                    <p class="header-sm">Graphics Design</p>
+                    <p style="color: var(--text-clr);" class="text-md">$20 <sup class="text-xsm">99</sup></p>
+                    <a href="{% url 'courses' %}" class="link link-md button">Start Now</a>
+                </div>
+            </div>
+            
+            <div class="course wh-max cc-cont f-col">
+                <img src="{% static 'images/peep-3.jpg' %}" class="course-image" />
+                <div class="course-info wh-max cc-cont f-col">
+                    <p class="header-sm">Network Marketing</p>
+                    <p style="color: var(--text-clr);" class="text-md">$25 <sup class="text-xsm">99</sup></p>
+                    <a href="#" class="link link-md button">Start Now</a>
+                </div>
+            </div>
+            
+            <div class="course wh-max cc-cont f-col">
+                <img src="{% static 'images/peep-2.jpg' %}" class="course-image" />
+                <div class="course-info wh-max cc-cont f-col">
+                    <p class="header-sm">Email Marketing</p>
+                    <p style="color: var(--text-clr);" class="text-md">$15 <sup class="text-xsm">99</sup></p>
+                    <a href="#" class="link link-md button">Start Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overview wh-full cc-cont f-col">
+        <div class="title header-sm">Overview</div>
+        <div class="overview-list wh-full sb-cont">
+            <div class="activity actions wh-max cc-cont f-col">
+                <p class="text-md">Activity</p>
+                <div class="action wh-full cb-cont">
+                    <a href="#" class="title link link-sm">Logged in</a>
+                    <p class="time text-xsm">2seconds ago</p>
+                </div>
+                <div class="action wh-full cb-cont">
+                    <a href="#" class="title link link-sm">Logged out</a>
+                    <p class="time text-xsm">on 02/11/2004</p>
+                </div>
+                <div class="action wh-full cb-cont">
+                    <a href="#" class="title link link-sm">Opened Graphics course</a>
+                    <p class="time text-xsm">on 02/11/2004</p>
+                </div>
+                <div class="action wh-full cb-cont">
+                    <a href="#" class="title link link-sm">Logged in</a>
+                    <p class="time text-xsm">on 02/11/2004</p>
+                </div>
+                <div class="action wh-full cb-cont">
+                    <a href="#" class="title link link-sm">Signed up</a>
+                    <p class="time text-xsm">on 02/11/2004</p>
+                </div>
+            </div>
+            <div class="payment actions wh-max cs-cont f-col">
+                <p class="text-md">Payment</p>
+                <div class="action wh-full cb-cont">
+                    <a href="#" class="title link link-sm">Purchased Graphics course</a>
+                    <p class="time text-xsm">on 02/11/2004</p>
+                </div>
+                <div class="action wh-full cb-cont">
+                    <a href="#" class="title link link-sm">No Purchase made yet</a>
+                    <p class="time text-xsm">on 02/11/2004</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

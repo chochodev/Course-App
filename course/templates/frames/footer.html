@@ -1,0 +1,46 @@
+{% load static %}
+
+{% block content %}
+<div class='footer ce-cont {% if request.resolver_match.url_name == "courses" %}unfooter{% endif %}'>
+    <div class='foot cs-cont'>
+        <span class="question text-sm cs-cont">Payment question?
+            <a href='#!' class='link .link-sm cc-cont'>Payment Policy?</a>
+        </span>
+        <span class="question text-sm cs-cont">Privacy question?
+            <a href='#!' class='link .link-sm cc-cont'>Privacy Policy?</a>
+        </span>
+        <span class="question text-sm cs-cont">Have other question?
+            <a href='#!' class='link .link-sm cc-cont'>FAQ?</a>
+        </span>
+        <span class="question text-sm cs-cont">Usage policy
+            <a href='#!' class='link .link-sm cc-cont'>Terms & Condition?</a>
+        </span>
+    </div>
+
+    <div class='foot cb-cont'>
+        <form class="newsletter">
+            <input placeholder='Email' name="newsletter-email" class="input input-sm" />
+            <button style="margin-top: .25rem;" class='button button-sm w-full'>Suscribe to our Newsletter</button>
+        </form>
+        <div class='social-media-icons ce-cont'>
+            <a href='#' class="link">
+                <i class="icon fa fa-facebook cc-cont"></i>
+            </a>
+            <a href='#' class="link">
+                <i class="icon fa fa-instagram cc-cont"></i>
+            </a>
+            <a href='#' class="link">
+                <i class="icon fa fa-twitter cc-cont"></i>
+            </a>
+            <a href='#' class="link">
+                <i class="icon fa fa-whatsapp cc-cont"></i>
+            </a>
+            <a href='#' class="link">
+                <i class="icon fa fa-github cc-cont"></i>
+            </a>
+        </div>
+    </div>
+
+    <p class="copyright text-sm">Copyright &copy; 2023 michochoprogrammer@gmail.com</p>
+</div>
+{% endblock %}

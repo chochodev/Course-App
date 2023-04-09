@@ -1,0 +1,100 @@
+{% extends 'course/main.html' %}
+{% load static %}
+
+{% block content %}
+<div id="accountsettings" class="ss-cont f-col">
+    <div class="title w-full cb-cont">
+        <span class="text header-lg">Profile</span>
+        <div class="acc-cta w-full ed-cont">
+            <a href="{% url 'home' %}" class="home-btn button button-sm">Cancel</a>
+            <button class="save-btn button button-sm">Save</button>
+        </div>
+    </div>
+
+    <!-- PROFILE FORM -->
+    <form class="acc-form ss-cont f-col">
+        <div class="acc-change w-full ss-cont f-col">
+            <div class="input-div w-full cb-cont">
+                <label class="label text-sm" for="fullname">Full name</label>
+                <input type="text" class="input fullname input-sm" id="fullname" name="fullname" value="Mikey Chocho" />
+            </div>
+            <div class="input-div w-full cb-cont">
+                <label class="label text-sm" for="email">E-mail</label>
+                <input type="email" class="input input-sm email" id="email" name="email" value="mikeychocho@gmail.com" />
+            </div>
+            <div class="input-div w-full cb-cont">
+                <label class="label text-sm" for="phone">Phone number</label>
+                <input type="number" class="input input-sm number" id="number" name="number" value="09039108667" />
+            </div>
+        </div>
+        
+        <!-- LINE BREAK -->
+        <div class="line"></div>
+
+        <div class="img-div w-max">
+            <img class="img" src="{% static 'images/peep-3.jpg' %}" alt=""/>
+            <button class="img-btn button button-sm">Change Image</button>
+        </div>
+    </form>
+
+    <div class="title cb-cont">
+        <span class="text header-lg">Change Password</span>
+        <div class="acc-cta w-full ed-cont">
+            <a href="{% url 'home' %}" class="home-btn button button-sm">Cancel</a>
+            <button class="save-btn button button-sm">Save</button>
+        </div>
+    </div>
+
+    <!-- PASSWORD FORM -->
+    <form class="acc-form password-form ss-cont f-col">
+        <div class="input-div w-full cb-cont">
+            <label class="label text-sm" for="current-password">Current Password</label>
+            <div class="input-content w-full cc-cont">
+                <input type="password" class="password input input-sm w-full" id="current-password" name="current-password" placeholder="Enter Current Password" />
+                <button class="eye-btn button-sm">
+                    <i class="icon fa fa-eye"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="input-div w-full cb-cont">
+            <label class="label text-sm" for="new-password">New Password</label>
+            <div class="input-content w-full cc-cont">
+                <input type="password" class="password input input-sm w-full" id="new-password" name="new-password" placeholder="Enter New Password" />
+                <button class="eye-btn button-sm">
+                    <i class="icon fa fa-eye"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="input-div w-full cb-cont">
+            <label class="label text-sm" for="confirm-password">Confirm Password</label>
+            <div class="input-content w-full cc-cont">
+                <input type="password" class="password input input-sm w-full" id="confirm-password" name="confirm-password" placeholder="Re-enter New Password" />
+                <button class="eye-btn button-sm">
+                    <i class="icon fa fa-eye"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <div class="title cb-cont">
+        <span class="text header-lg">Delete Account</span>
+        <div class="acc-cta w-full ed-cont">
+            <a href="{% url 'home' %}" class="home-btn button button-sm">Cancel</a>
+            <button class="save-btn button button-sm">Save</button>
+        </div>
+    </div>
+
+    <form class="acc-form delete-section">
+        <div class="input-div w-full cb-cont">
+            <label class="label text-sm" for="fullname">De-activate for 30days</label>
+            <input type="checkbox" class="" id="deactivate-temporaryly" name="deactivate-temporaryly" value="false" />
+        </div>
+        <div class="input-div w-full cb-cont">
+            <label class="label text-sm" for="fullname">De-activate Permanently</label>
+            <input type="checkbox" class="" id="deactivate-permanently" name="deactivate-permanently" value="false" />
+        </div>
+    </form>
+</div>
+{% endblock %}

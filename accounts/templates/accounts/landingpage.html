@@ -1,0 +1,233 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacroTech: landing page</title>
+
+    <link rel="stylesheet" href="{% static 'css/landingpage.css' %}" />
+    <link rel="stylesheet" href="{% static 'fontawesome/css/solid.css' %}" />
+    <link rel="stylesheet" href="{% static 'fontawesome/css/brands.css' %}" />
+    <link rel="stylesheet" href="{% static 'fontawesome/css/fontawesome.css' %}" />
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}" />
+    <link rel="stylesheet" href="{% static 'fontawesome/css/v4-shims.css' %}" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Orbitron&family=Source+Sans+Pro&family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="signin" class="signin">
+        <form action="POST" class="form">
+            {% csrf_token %}
+            <h3 class="title">Login account</h3>
+            <div class="input">
+                <i class="icon fa fa-send-o"></i>
+                <input class="email" type="email" placeholder="(Email)" required/>
+            </div>
+            <div class="input">
+                <i class="icon fa fa-lock"></i>
+                <input class="name" type="password" placeholder="(Password)" required/>
+            </div>
+            <div class="input">
+                <input class="checkbox" type="checkbox" />
+                <small class="check-info">Keep me logged in <a href="#" class="link">forget password</a></small>
+            </div>
+            <button type="submit" class="submit">Sign In</button>
+        </form>
+    </div>
+
+    <div id="signup" class="signup">
+        <form action="#" class="form">
+            {% csrf_token %}
+            <h3 class="title">Fill form to sign up</h3>
+            <div class="input">
+                <i class="icon fa fa-user"></i>
+                <input class="name" type="text" placeholder="(Firstname) (Lastname)" required/>
+            </div>
+            <div class="input">
+                <i class="icon fa fa-send-o"></i>
+                <input class="email" type="email" placeholder="(Email)" required/>
+            </div>
+            <div class="input">
+                <i class="icon fa fa-lock"></i>
+                <input class="name" type="password" placeholder="(Password)" required/>
+            </div>
+            <div class="input">
+                <input class="checkbox" type="checkbox" required/>
+                <small class="check-info">I agree to the <a href="#" class="link">terms and condition</a></small>
+            </div>
+            <button type="submit" class="submit">Sign Up</button>
+        </form>
+    </div>
+    <div id="body">
+        <div class="navbar">
+            <div class="logo">
+                <img class="logo-image" src="{% static 'images/xclusive.jpg' %}" alt=""/>
+                <span class="logo-title">MacroTech</span>
+            </div>
+
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <a href="#!" id="signin-button" class="link">Login</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#!" id="signup-button" class="link">SignUp</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#live-demo" id="live-demo-button" class="link">Live Demo</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#pricing" id="pricing-button" class="link">Pricing</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#contact" id="contact-us-button" class="link">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="hero">
+            <div class="home">
+                <div class="home-text">
+                    <h2 class="title">Learn Tech in a Classic way</h2>
+                    <p class="info">A good color combination for a tech course learning website is blue and orange. Blue is often associated with trust, intelligence, and professionalism, while orange is often associated with innovation, creativity, and energy.</p>
+                    <p class="info">Together, these colors create a sense of trustworthiness and excitement, which are both important for a tech-focused educational website.</p>
+                    <small class="link">Original by <a href="#" class="xclusive-link">Mr. Xclusive</a></small>
+                    <a href="#" id="joinus-button" class="join-button">Join Now</a>
+                </div>
+                <img class="home-image" src="{% static 'images/xclusive.jpg' %}" alt=""/>
+            </div>
+
+            <div id="live-demo" class="live-demo">
+                <h2>LIVE DEMO</h2>
+                <div class="demo-content">
+                    <video src="{% static 'videos/g.mp4' %}" alt="/" muted="muted" autoplay="autoplay" loop="loop" class="demo-video"></video>
+                    <aside class="demo-aside">
+                        <div class="demo-info">
+                            <span class="info-emoji">✔</span>
+                            <p class="info">Interactive Live Class</p>
+                        </div>
+                        <div class="demo-info">
+                            <span class="info-emoji">✔</span>
+                            <p class="info">Group Chat with members</p>
+                        </div>
+                        <div class="demo-info">
+                            <span class="info-emoji">✔</span>
+                            <p class="info">Pop-Quiz with Prices</p>
+                        </div>
+                        <div class="demo-info">
+                            <span class="info-emoji">✔</span>
+                            <p class="info">Connecting with Pros</p>
+                        </div>
+                        <div class="demo-info">
+                            <span class="info-emoji">✔</span>
+                            <p class="info">Pro ethics Training</p>
+                        </div>
+                        <div class="demo-info">
+                            <span class="info-emoji">✔</span>
+                            <p class="info">LinkedIn profile setup</p>
+                        </div>
+                        <div class="demo-info">
+                            <p class="info">...and many more</p>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+
+            <div id="pricing" class="pricing">
+                <div class="item">
+                    <span class="price">$14<sup>99</sup>/<sub>mo</sub></span>
+                    <img src="{% static 'images/programmer.jpg' %}" alt="" class="item-image"/>
+                    <div class="item-info">
+                        <p class="title">Web Design</p>
+                        <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem id rem sint vero voluptas saepe.</p>
+                    </div>
+                    <a href="#" class="link">Get Started</a>
+                </div>
+                <div class="item">
+                    <span class="price">$14<sup>99</sup>/<sub>mo</sub></span>
+                    <img src="{% static 'images/immm.jpg' %}" alt="" class="item-image"/>
+                    <div class="item-info">
+                        <p class="title">Graphics Design</p>
+                        <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem id rem sint vero voluptas saepe.</p>
+                    </div>
+                    <a href="#" class="link">Get Started</a>
+                </div>
+                <div class="item">
+                    <span class="price">$14<sup>99</sup>/<sub>mo</sub></span>
+                    <img src="{% static 'images/immmm.jpg' %}" alt="" class="item-image"/>
+                    <div class="item-info">
+                        <p class="title">Email Marketing</p>
+                        <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem id rem sint vero voluptas saepe.</p>
+                    </div>
+                    <a href="#" class="link">Get Started</a>
+                </div>
+                <div class="item">
+                    <span class="price">$14<sup>99</sup>/<sub>mo</sub></span>
+                    <img src="{% static 'images/chat_img_1.jpg' %}" alt="" class="item-image"/>
+                    <div class="item-info">
+                        <p class="title">Network Marketing</p>
+                        <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem id rem sint vero voluptas saepe.</p>
+                    </div>
+                    <a href="#" class="link">Get Started</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact" class="contact">
+            <div class="media">
+                <div class="item">
+                    <p class="via">
+                        <i class="icon fa fa-phone"></i>Phone Call: 
+                    </p>
+                    <span class="via-on">+234 903 910 8667</span>
+                </div>
+                <div class="item">
+                    <p class="via">
+                        <i class="icon fa fa-whatsapp"></i>WhatsApp on: 
+                    </p>
+                    <span class="via-on">+234 903 910 8667</span>
+                </div>
+                <div class="item">
+                    <p class="via">
+                        <i class="icon fa fa-send-o"></i>Email at: 
+                    </p>
+                    <span class="via-on">michochoprogrammer@gmail.com</span>
+                </div>
+            </div>
+            <form action="#" class="form">
+                <span class="info">Contact Form</span>
+                <input type="text" placeholder="Full name" required />
+                <textarea placeholder="Content" maxlength="500" required></textarea>
+                <input type="email" placeholder="Email (Optional)" />
+                <button type="submit" class="submit">Send</button>
+            </form>
+        </div>
+
+        <div class="footer">
+            <div class="follow">
+                <a href="#" class="link">
+                    <i class="icon fa fa-instagram"></i>
+                </a>
+                <a href="#" class="link">
+                    <i class="icon fa fa-facebook"></i>
+                </a>
+                <a href="#" class="link">
+                    <i class="icon fa fa-twitter"></i>
+                </a>
+                <a href="#" class="link">
+                    <i class="icon fa fa-youtube"></i>
+                </a>
+            </div>
+            <p class="copyright">Copyright 2022 &copy; michochoprogrammer</p>
+        </div>
+    </div>
+</body>
+</html>
+
+{% block js %}
+    <script src="{% static 'js/landingpage.js' %}"></script>
+{% endblock %}

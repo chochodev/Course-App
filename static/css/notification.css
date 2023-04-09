@@ -1,0 +1,85 @@
+#notification {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #00000080;
+    overflow: hidden;
+    display: none !important;
+}
+
+#notification.show {
+    display: flex !important;
+}
+
+#notification .body {
+    background: #fff;
+    width: 100%;
+    max-width: 30rem;
+    margin: 6.5rem 5vw 0 0;
+    border-radius: 1rem;
+}
+
+/* HEAD SECTION */
+#notification .body .head {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #00000010;
+}
+
+#notification .body .head .cancel-btn {
+    border: 1px solid var(--bg-light);
+    border-radius: .5rem;
+}
+
+#notification .body .head .cancel-btn:hover {
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* NAV SECTION */
+#notification .body .nav {
+    padding: .25rem 1.5rem;
+    gap: 1rem;
+}
+
+#notification .body .nav .nav-btn {
+    font: 600 .875rem var(--sub-header-font);
+}
+
+#notification .body .nav .nav-btn:first-child {
+    border-bottom: 2px solid #00000050;
+}
+
+/* CONTENT SECTION */
+#notification .body .contents {
+
+}
+
+#notification .body .contents .all-notifications {
+    gap: .25rem;
+    padding: 1.5rem;
+}
+
+#notification .body .contents .all-notifications .item {
+    cursor: pointer;
+    gap: 1rem;
+    height: 5rem;
+    padding: .5rem 0;
+}
+
+#notification .body .contents .all-notifications .item .img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#notification .body .contents .all-notifications .item .info {
+
+}
+
+#notification .body .contents .all-notifications .item .info .text,
+#notification .body .contents .all-notifications .item .info .time {
+    font-weight: 600;
+}

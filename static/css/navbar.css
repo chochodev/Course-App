@@ -1,0 +1,245 @@
+.navbar {
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    padding: .25em 1.5em .25em .5em;
+    height: max-content;
+    background: var(--main-clr);
+    border-bottom: 1px solid var(--cta-border);
+    /* box-shadow: var(--sub-sh); */
+}
+
+/* REMOVE THE NAV */
+.navbar.close {
+    display: none;
+}
+
+/* MENU */
+.navbar .menu {
+    gap: 5vw;
+}
+
+/* MENU BAR */
+.navbar .menu .menu-bar {
+    display: none;
+}
+
+.navbar .menu .menu-bar .icon {
+    padding: .25em;
+    border-radius: 2em;
+    cursor: pointer;
+}
+
+.navbar .menu .menu-bar .icon.fa-times {
+    display: none;
+    font-size: 1.7em;
+}
+
+/* MENU CLICKER MODAL */
+.navbar .menu .bg-modal {
+    display: none;
+}
+
+/* MENU ITEMS */
+.navbar .menu .menu-list {
+    gap: .25em;
+}
+
+.navbar .menu .menu-list .link {
+    height: max-content;
+    border-radius: .75rem;
+}
+
+.navbar .menu .menu-list .link:hover {
+    background: #e2e4ff;
+}
+
+.navbar .menu .menu-list .link .text {
+    font: 400 .875rem var(--main-header-font);
+    line-height: 1.25rem;
+}
+
+.navbar .menu .menu-list .link .icon {
+    display: none;
+    color: var(--text-clr-2);
+    font-size: .8em;
+}
+/* for active page */
+.navbar .menu .menu-list .link.active-page {
+    background: var(--cta-clr) !important;
+    color: #fff !important;
+}
+
+.navbar .menu .menu-list .link.active-page .link-md {
+    font-weight: 600 !important;
+}
+
+.navbar .menu .menu-list .menu-foot {
+    display: none;
+}
+
+/* NOTIFICATION */
+.navbar .menu .notification {
+    position: relative;
+    width: 1.75rem;
+    height: 1.8rem;
+}
+
+.navbar .menu .notification:hover {
+    animation: wiggleNotification .25s infinite 4s;
+}
+
+.navbar .menu .notification .number {
+    position: absolute;
+    top: 0;
+    right: .05rem;
+    width: .65rem;
+    height: .65rem;
+    border-radius: 50%;
+    background: #FF6F00;
+    border: 1px solid #fff;
+}
+
+.navbar .menu .notification .icon {
+    font-size: 1.25rem;
+}
+
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: .25em 1em .25em .25em;
+    }
+
+    .navbar .menu {
+        flex-direction: row-reverse;
+        gap: 2vw;
+    }
+
+    .navbar .menu .menu-bar {
+        display: flex;
+    }
+
+    .navbar .menu .bg-modal {
+        display: none;
+        z-index: 998;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--bg-dark);
+        height: calc(100vh - 100%);
+        width: 100%;
+    }
+
+    .navbar .menu .unbg-modal {
+        display: block !important;
+    }
+
+    .navbar .menu .menu-list {
+        z-index: 999;
+        position: absolute;
+        top: calc(100%);
+        right: -13rem;
+        height: calc(100vh - 100%);
+        width: 35vw;
+        /* display: none; */
+        flex-direction: column;
+        justify-content: start;
+        gap: .25rem;
+        align-items: start;
+        background: #fff;
+        border-top: 1px solid var(--main-clr);
+        transition: .25s ease-in-out !important;
+    }
+
+    .navbar .menu .unmenu-list {
+        right: 0;
+        transition: .25s ease-in-out !important;
+    }
+
+    .navbar .menu .menu-list .link {
+        width: 100%;
+        padding: .25rem 1rem;
+        gap: 0.875rem;
+        height: max-content;
+    }
+
+    .navbar .menu .menu-list .link:hover {
+        transform: scale(.98);
+    }
+
+    .navbar .menu .menu-list .link .icon {
+        display: flex;
+    }
+
+    .navbar .menu .menu-list .link .title {
+        color: var(--text-clr-2);
+        font: 500 .9em var(--main-font);
+    }
+
+    .navbar .menu .menu-list .link:hover * {
+        color: var(--blue-clr);
+
+    }
+
+    .navbar .menu .menu-list .menu-foot {
+        position: absolute;
+        bottom: 2em;
+        display: flex;
+        flex-wrap: nowrap;
+        width: max-content;
+        color: var(--primary-clr);
+        font-size: .6em;
+    }
+
+    .navbar .menu .notification {
+        transform: scale(.9);
+    }
+}
+
+@media (max-width: 320px) {
+    .navbar .menu .menu-list {
+        /* display: ; */
+        gap: .25em;
+    }
+    
+    .navbar .menu .notification {
+        /* display: ; */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* NOTIFICATION ANIMATION */
+@keyframes wiggleNotification {
+    0% {
+        transform: rotate(5deg)
+    }
+    25% {
+        transform: rotate(-5deg)
+    }
+    50% {
+        transform: rotate(5deg) translateY(-2px);
+    }
+    75% {
+        transform: rotate(-5deg) translateY(-4px);
+    }
+    100% {
+        transform: rotate(0)
+    }
+}
