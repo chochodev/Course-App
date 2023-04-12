@@ -2,29 +2,29 @@
 {% load static %}
 
 {% block content %}
-<div id="courses-page" class="wh-full ss-cont">
+<div id="courses-page" class="wh-full flex-s-s">
     {% include 'frames/coursenavbar.html' %}
-    <div class="course-section w-full cc-cont f-col">
-        <div class="navigation w-full cb-cont">
-            <button class="nav previous cc-cont">
-                <i class="icon fa fa-chevron-left cc-cont"></i>
+    <div class="course-section w-full flex-c-c dir-col">
+        <div class="navigation w-full flex-c-sb">
+            <button class="nav previous flex-c-c">
+                <i class="icon fa fa-chevron-left flex-c-c"></i>
             </button>
             <button id="courses-menubar" class="menubar">
                 <i class="icon fa fa-bars-staggered"></i>
             </button>
-            <div class="nav-hero w-full cb-cont">
-                <a href="{% url 'home' %}" class="home cc-cont button button-sm">Back to Home</a>
-                <a href="#" class="complete cdc-cont">
+            <div class="nav-hero w-full flex-c-sb">
+                <a href="{% url 'home' %}" class="home flex-c-c button button-sm">Back to Home</a>
+                <a href="#" class="complete flex-c-e flex-tc">
                     <i class="icon fa fa-star-o"></i>
                     <span class="text text-md">Completed</span>
                 </a>
             </div>
             
-            <button class="nav next cc-cont">
-                <i class="icon fa fa-chevron-right cc-cont"></i>
+            <button class="nav next flex-c-c">
+                <i class="icon fa fa-chevron-right flex-c-c"></i>
             </button>
         </div>
-        <div class="media w-full f-col">
+        <div class="media w-full dir-col">
             <h2 class="title header-md">Mod 1: What are the benefits of learning Graphics Design?</h2>
             <!-- VIDEO PLAYER -->
             <video-js
@@ -45,19 +45,19 @@
             </video-js>
         </div>
         <hr class="line-break">
-        <div class="comment-section ss-cont f-col">
-            <div class="post-comment ss-cont">
+        <div class="comment-section flex-s-s dir-col">
+            <div class="post-comment flex-s-s">
                 <img src="{% static 'images/peep-3.jpg' %}" alt="" class="img"/>
-                <form class="input-section ss-cont f-col">
+                <form class="input-section flex-s-s dir-col">
                     <textarea placeholder="Say something" cols="60" rows="10" id="comment-input" class="comment-input text-md" ></textarea>
                     <button class="submit button button-md" type="submit">Post</button>
                 </form>
             </div>
-            <div class="comment-list ss-cont f-col">
-                <div class="comment ss-cont">
+            <div class="comment-list flex-s-s dir-col">
+                <div class="comment flex-s-s">
                     <img src="{% static 'images/peep-3.jpg' %}" alt="" class="img"/>
-                    <div class="info ss-cont f-col">
-                        <div class="account-info cs-cont">
+                    <div class="info flex-s-s dir-col">
+                        <div class="account-info flex-c-s">
                             <p class="name text-md">Michael Ayodeji</p>
                             <span class="time text-sm">Oct 3, 2021</span>
                         </div>
@@ -66,11 +66,11 @@
                     </div>
                 </div>
             </div>
-            <div class="comment-list ss-cont f-col">
-                <div class="comment ss-cont">
+            <div class="comment-list flex-s-s dir-col">
+                <div class="comment flex-s-s">
                     <img src="{% static 'images/peep-2.jpg' %}" alt="" class="img"/>
-                    <div class="info ss-cont f-col">
-                        <div class="account-info cs-cont">
+                    <div class="info flex-s-s dir-col">
+                        <div class="account-info flex-c-s">
                             <p class="name text-md">Michael Ayodeji</p>
                             <span class="time text-sm">Oct 3, 2021</span>
                         </div>
@@ -79,11 +79,11 @@
                     </div>
                 </div>
             </div>
-            <div class="comment-list ss-cont f-col">
-                <div class="comment ss-cont">
+            <div class="comment-list flex-s-s dir-col">
+                <div class="comment flex-s-s">
                     <img src="{% static 'images/peep-1.jpg' %}" alt="" class="img"/>
-                    <div class="info ss-cont f-col">
-                        <div class="account-info cs-cont">
+                    <div class="info flex-s-s dir-col">
+                        <div class="account-info flex-c-s">
                             <p class="name text-md">Michael Ayodeji</p>
                             <span class="time text-sm">Oct 3, 2021</span>
                         </div>
@@ -92,11 +92,11 @@
                     </div>
                 </div>
             </div>
-            <div class="comment-list ss-cont f-col">
-                <div class="comment ss-cont">
+            <div class="comment-list flex-s-s dir-col">
+                <div class="comment flex-s-s">
                     <img src="{% static 'images/peep-4.jpg' %}" alt="" class="img"/>
-                    <div class="info ss-cont f-col">
-                        <div class="account-info cs-cont">
+                    <div class="info flex-s-s dir-col">
+                        <div class="account-info flex-c-s">
                             <p class="name text-md">Michael Ayodeji</p>
                             <span class="time text-sm">Oct 3, 2021</span>
                         </div>

@@ -25,9 +25,8 @@ class CustomUserManager(BaseUserManager):
 
 class User(AbstractUser):
     username = models.CharField(max_length=200, unique=True, null=True, blank=True)
-    first_name = models.CharField(max_length=200)
-    last_name = models.CharField(max_length=200)
     email = models.EmailField(max_length=200, unique=True)
+    alias = models.CharField(max_length=200, unique=True, null=True, blank=True)
     avatar = models.ImageField(upload_to="user_avatar/", null=True, blank=True)
     is_email_verified = models.BooleanField(default=False, null=True, blank=True)
     USERNAME_FIELD = 'email'
@@ -36,4 +35,4 @@ class User(AbstractUser):
 
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name} - {self.email[0:10]}"
+        return f"{self.username} - {self.email[0:10]}"

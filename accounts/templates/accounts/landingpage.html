@@ -6,8 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MacroTech: landing page</title>
+    <title>DesignHive: landing page</title>
 
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <link rel="stylesheet" href="{% static 'css/landingpage.css' %}" />
     <link rel="stylesheet" href="{% static 'fontawesome/css/solid.css' %}" />
     <link rel="stylesheet" href="{% static 'fontawesome/css/brands.css' %}" />
@@ -20,74 +21,92 @@
     <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Orbitron&family=Source+Sans+Pro&family=Ubuntu&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="signin" class="signin">
-        <form action="POST" class="form">
-            {% csrf_token %}
-            <h3 class="title">Login account</h3>
-            <div class="input">
-                <i class="icon fa fa-send-o"></i>
-                <input class="email" type="email" placeholder="(Email)" required/>
-            </div>
-            <div class="input">
-                <i class="icon fa fa-lock"></i>
-                <input class="name" type="password" placeholder="(Password)" required/>
-            </div>
-            <div class="input">
-                <input class="checkbox" type="checkbox" />
-                <small class="check-info">Keep me logged in <a href="#" class="link">forget password</a></small>
-            </div>
-            <button type="submit" class="submit">Sign In</button>
-        </form>
-    </div>
-
-    <div id="signup" class="signup">
-        <form action="#" class="form">
-            {% csrf_token %}
-            <h3 class="title">Fill form to sign up</h3>
-            <div class="input">
-                <i class="icon fa fa-user"></i>
-                <input class="name" type="text" placeholder="(Firstname) (Lastname)" required/>
-            </div>
-            <div class="input">
-                <i class="icon fa fa-send-o"></i>
-                <input class="email" type="email" placeholder="(Email)" required/>
-            </div>
-            <div class="input">
-                <i class="icon fa fa-lock"></i>
-                <input class="name" type="password" placeholder="(Password)" required/>
-            </div>
-            <div class="input">
-                <input class="checkbox" type="checkbox" required/>
-                <small class="check-info">I agree to the <a href="#" class="link">terms and condition</a></small>
-            </div>
-            <button type="submit" class="submit">Sign Up</button>
-        </form>
-    </div>
-    <div id="body">
-        <div class="navbar">
-            <div class="logo">
-                <img class="logo-image" src="{% static 'images/xclusive.jpg' %}" alt=""/>
-                <span class="logo-title">MacroTech</span>
-            </div>
-
-            <ul class="menu-list">
-                <li class="menu-item">
-                    <a href="#!" id="signin-button" class="link">Login</a>
-                </li>
-                <li class="menu-item">
-                    <a href="#!" id="signup-button" class="link">SignUp</a>
-                </li>
-                <li class="menu-item">
-                    <a href="#live-demo" id="live-demo-button" class="link">Live Demo</a>
-                </li>
-                <li class="menu-item">
-                    <a href="#pricing" id="pricing-button" class="link">Pricing</a>
-                </li>
-                <li class="menu-item">
-                    <a href="#contact" id="contact-us-button" class="link">Contact Us</a>
-                </li>
-            </ul>
+    <div id="navbar" class="navbar w-full flex-c-s">
+        <div class="logo">
+            {% include 'frames/logo.html' %}
         </div>
+        <div class="menu-list w-full flex-c-sb">
+            <div class="items-1 flex-ac screen-md">
+                <a href="#live-demo" id="live-demo-button" class="link text-md w-600 button-md">Live Demo</a>
+                <a href="#pricing" id="pricing-button" class="link text-md w-600 button-md">Pricing</a>
+                <a href="#contact" id="contact-us-button" class="link text-md w-600 button-md">Contact Us</a>
+            </div>
+            <div class="items-2 flex-ac screen-md">
+                <button id="signin-button" class="link text-md w-600 button-md">Login</button>
+                <button id="signup-button" class="link text-md w-600 button-md">SignUp</button>
+            </div>
+            <div class="screen-sm"></div>
+            <button id="menu-bar-btn" class="menu-bar screen-sm">
+                <i id="bars-icon" class="icon fa fa-bars text-lg"></i>
+                <i id="close-icon" class="icon close fa fa-times text-lg"></i>
+            </button>
+        </div>
+
+        <div id="menu-list" class="menu-list-2 close flex dir-col screen-sm">
+            <a href="#live-demo" id="live-demo-button" class="link text-md w-600 button-md">Live Demo</a>
+            <a href="#pricing" id="pricing-button" class="link text-md w-600 button-md">Pricing</a>
+            <a href="#contact" id="contact-us-button" class="link text-md w-600 button-md">Contact Us</a>
+            <div class="buttons flex dir-col">
+                <button id="signin-button" class="link text-md w-600 button-md">Login</button>
+                <button id="signup-button" class="link text-md w-600 button-md">SignUp</button>
+            </div>
+        </div>
+        
+
+        <!-- LOGIN FORM -->
+        <div id="signin" class="signin">
+            <form method="POST" class="form">
+                {% csrf_token %}
+                <h3 class="title">Login account</h3>
+                <div class="input">
+                    <i class="icon fa fa-send-o"></i>
+                    <input name="email" class="email" type="email" placeholder="(Email)" required/>
+                </div>
+                <div class="input">
+                    <i class="icon fa fa-lock"></i>
+                    <input name="password" class="name" type="password" placeholder="(Password)" required/>
+                </div>
+                <div class="input">
+                    <input name="login-checkbox" class="checkbox" type="checkbox" />
+                    <small class="check-info">Keep me logged in <a href="#" class="link">forget password</a></small>
+                </div>
+                <button type="submit" class="submit" name="signin">Sign In</button>
+            </form>
+        </div>
+
+        <!-- SIGN UP FORM -->
+        <div id="signup" class="signup">
+            <form method="POST" class="form">
+                {% csrf_token %}
+                <h3 class="title">Fill form to sign up</h3>
+                <div class="input">
+                    <i class="icon fa fa-user"></i>
+                    <input name="username" class="name" type="text" placeholder="(Firstname) (Lastname)" required/>
+                </div>
+                <div class="input">
+                    <i class="icon fa fa-user"></i>
+                    <input name="alias" class="name" type="text" placeholder="(Alias)" required/>
+                </div>
+                <div class="input">
+                    <i class="icon fa fa-send-o"></i>
+                    <input name="email" class="email" type="email" placeholder="(Email)" required/>
+                </div>
+                <div class="input">
+                    <i class="icon fa fa-lock"></i>
+                    <input name="password" class="name" type="password" placeholder="(Password)" required/>
+                </div>
+                <div class="input">
+                    <input name="terms-checkbox" class="checkbox" type="checkbox" required/>
+                    <small class="check-info">I agree to the <a href="#" class="link">terms and condition</a></small>
+                </div>
+                <button type="submit" class="submit" name="signup">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- LANDING PAGE BODY -->
+    <div id="body" class="wh-full">
 
         <div class="hero">
             <div class="home">

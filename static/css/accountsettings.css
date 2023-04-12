@@ -89,7 +89,7 @@
     border-top: 1px solid var(--cta-border);
 }
 
-/* Image section */
+/* IMAGE SECTION */
 #accountsettings .acc-form .img-div {
     position: relative;
     margin-bottom: 5rem;
@@ -111,7 +111,16 @@
 }
 
 /* DELETE ACCOUNT SECTION */
+#accountsettings .delete-section {
+    margin-bottom: 5rem;
+}
+
 #accountsettings .delete-section .delete-btn {
     font: 400 .8rem var(--main-link-font);
     color: var(--cta-clr);
+}
+
+/* LOGOUT ACCOUNT SECTION */
+#accountsettings .logout-section .logout-btn {
+    background: var(--link2-hover);
 }

@@ -32,3 +32,22 @@ const my_body = [signup, signin, demoButton, pricingButton, contactButton]
 // });
 
 // Toggle the event instead
+
+
+// FOR THE TOGGLING TO MENUBAR TOGGLE MENU LIST
+
+const menubarBtn = document.getElementById('menu-bar-btn');
+const barsIcon = document.getElementById('bars-icon');
+const closeIcon = document.getElementById('close-icon');
+const menuList = document.getElementById('menu-list');
+const menuLinks = document.querySelectorAll('.link');
+
+myArray = [barsIcon, closeIcon, menuList];
+
+[menubarBtn, ...menuLinks].forEach(clickItem => {
+    clickItem.addEventListener('click', () => {
+        myArray.forEach(item => {
+            item.classList.toggle('close');
+        });
+    });
+});
