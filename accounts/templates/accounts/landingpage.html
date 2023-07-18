@@ -6,10 +6,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DesignHive: landing page</title>
+    <title>DesignHive - Landing Page</title>
 
-    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/landingpage.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/accounts/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/accounts/landingpage.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/frames/logo.css' %}" />
+
     <link rel="stylesheet" href="{% static 'fontawesome/css/solid.css' %}" />
     <link rel="stylesheet" href="{% static 'fontawesome/css/brands.css' %}" />
     <link rel="stylesheet" href="{% static 'fontawesome/css/fontawesome.css' %}" />
@@ -21,6 +23,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Orbitron&family=Source+Sans+Pro&family=Ubuntu&display=swap" rel="stylesheet">
 </head>
 <body>
+    {% if messages %}
+    <ul id="server_messages" class="server_messages">
+        {% for message in messages %}
+        <li id="server_message" class="{% if message.tags %} {{message.tags}} {% endif %} message">{{message}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
     <div id="navbar" class="navbar w-full flex-c-s">
         <div class="logo">
             {% include 'frames/logo.html' %}
@@ -52,177 +61,166 @@
             </div>
         </div>
         
-
+        <!-- BACKGROUND OVERLAY ON FOCUS OF SIGNIN AND SIGNUP FORM -->
+        <div id="signing-background-overlay"></div>
         <!-- LOGIN FORM -->
-        <div id="signin" class="signin">
-            <form method="POST" class="form">
-                {% csrf_token %}
-                <h3 class="title">Login account</h3>
-                <div class="input">
-                    <i class="icon fa fa-send-o"></i>
-                    <input name="email" class="email" type="email" placeholder="(Email)" required/>
-                </div>
-                <div class="input">
-                    <i class="icon fa fa-lock"></i>
-                    <input name="password" class="name" type="password" placeholder="(Password)" required/>
-                </div>
-                <div class="input">
-                    <input name="login-checkbox" class="checkbox" type="checkbox" />
-                    <small class="check-info">Keep me logged in <a href="#" class="link">forget password</a></small>
-                </div>
-                <button type="submit" class="submit" name="signin">Sign In</button>
-            </form>
-        </div>
+        <form method="POST" id="signin" class="form">
+            {% csrf_token %}
+            <h3 class="title text-lg w-600">Login account</h3>
+            <div class="input">
+                <i class="icon fa fa-send-o"></i>
+                <input name="email" class="email" type="email" placeholder="(Email)" required/>
+            </div>
+            <div class="input">
+                <i class="icon fa fa-lock"></i>
+                <input name="password" class="name" type="password" placeholder="(Password)" required/>
+            </div>
+            <div class="input">
+                <input name="login-checkbox" class="checkbox" type="checkbox" />
+                <small class="check-info">Keep me logged in<a href="{% url 'forgetpassword' %}" class="link">forget password</a></small>
+            </div>
+            <button type="submit" id="signin-submit" class="submit text-sm w-600" name="signin">Sign In</button>
+            <div class="info flex-c-c dir-col w-full">
+                <p id="signin-error" class="text-sm w-600">{{signin_error}}</p>
+            </div>
+        </form>
 
         <!-- SIGN UP FORM -->
-        <div id="signup" class="signup">
-            <form method="POST" class="form">
-                {% csrf_token %}
-                <h3 class="title">Fill form to sign up</h3>
-                <div class="input">
-                    <i class="icon fa fa-user"></i>
-                    <input name="username" class="name" type="text" placeholder="(Firstname) (Lastname)" required/>
-                </div>
-                <div class="input">
-                    <i class="icon fa fa-user"></i>
-                    <input name="alias" class="name" type="text" placeholder="(Alias)" required/>
-                </div>
-                <div class="input">
-                    <i class="icon fa fa-send-o"></i>
-                    <input name="email" class="email" type="email" placeholder="(Email)" required/>
-                </div>
-                <div class="input">
-                    <i class="icon fa fa-lock"></i>
-                    <input name="password" class="name" type="password" placeholder="(Password)" required/>
-                </div>
-                <div class="input">
-                    <input name="terms-checkbox" class="checkbox" type="checkbox" required/>
-                    <small class="check-info">I agree to the <a href="#" class="link">terms and condition</a></small>
-                </div>
-                <button type="submit" class="submit" name="signup">Sign Up</button>
-            </form>
-        </div>
+        <form method="POST" id="signup" class="form">
+            {% csrf_token %}
+            <h3 class="title text-lg w-600">Fill form to sign up</h3>
+            <div class="input">
+                <i class="icon fa fa-user"></i>
+                <input name="username" class="name" type="text" placeholder="(Firstname) (Lastname)" required/>
+            </div>
+            <div class="input">
+                <i class="icon fa fa-user"></i>
+                <input name="alias" class="name" type="text" placeholder="(Alias)" required/>
+            </div>
+            <div class="input">
+                <i class="icon fa fa-send-o"></i>
+                <input name="email" class="email" type="email" placeholder="(Email)" required/>
+            </div>
+            <div class="input">
+                <i class="icon fa fa-lock"></i>
+                <input name="password" id="signup-password" class="name" type="password" placeholder="(Password)" required/>
+            </div>
+            <div class="input">
+                <input name="terms-checkbox" class="checkbox" type="checkbox" required/>
+                <small class="check-info">I agree to the<a href="#" class="link">terms and condition</a></small>
+            </div>
+            <button type="submit" id="signup-submit" class="submit text-sm w-600" name="signup">Sign Up</button>
+            <div class="info flex-c-c dir-col w-full">
+                <p id="signup-error" class="text-sm w-600">{{signup_error}}</p>
+            </div>
+        </form>
     </div>
 
 
     <!-- LANDING PAGE BODY -->
-    <div id="body" class="wh-full">
-
-        <div class="hero">
-            <div class="home">
-                <div class="home-text">
-                    <h2 class="title">Learn Tech in a Classic way</h2>
-                    <p class="info">A good color combination for a tech course learning website is blue and orange. Blue is often associated with trust, intelligence, and professionalism, while orange is often associated with innovation, creativity, and energy.</p>
-                    <p class="info">Together, these colors create a sense of trustworthiness and excitement, which are both important for a tech-focused educational website.</p>
-                    <small class="link">Original by <a href="#" class="xclusive-link">Mr. Xclusive</a></small>
-                    <a href="#" id="joinus-button" class="join-button">Join Now</a>
+    <div id="landingpage" class="wh-full">
+        <div class="hero w-full flex-c-sb dir-col">
+            <div class="hero-1 w-full flex-c-sb">
+                <div class="title flex-s-s dir-col">
+                    <h2 class="text text-md">Learn Tech in a Classic way</h2>
+                    <p class="main-info header-xlx">Helping individuals like you succeed in this modern evolving Tech Industry.</p>
+                    <p class="info text-md">Welcome to DesignHive, your one-stop destination for all your graphic design and network marketing needs. Our website was created in 2022 by the brilliant mind of Chocho, who envisioned a platform that provides comprehensive resources for individuals seeking to learn and develop their skills in graphics design and network marketing.
+                    </p>
+                    <button id="joinus-button" onclick="document.getElementById('signup-button').click();" class="button button-lg">Join Us</button>
                 </div>
-                <img class="home-image" src="{% static 'images/xclusive.jpg' %}" alt=""/>
+                <img src="{% static 'images/xclusive.jpg' %}" class="img" />
             </div>
 
-            <div id="live-demo" class="live-demo">
-                <h2>LIVE DEMO</h2>
-                <div class="demo-content">
+            <div id="live-demo" class="live-demo flex-c-c dir-col">
+                <h2 class="title header-md w-600">LIVE DEMO</h2>
+                <div class="demo-content flex-jsb">
                     <video src="{% static 'videos/g.mp4' %}" alt="/" muted="muted" autoplay="autoplay" loop="loop" class="demo-video"></video>
-                    <aside class="demo-aside">
+                    <aside class="demo-aside flex-jsa dir-col">
                         <div class="demo-info">
                             <span class="info-emoji">✔</span>
-                            <p class="info">Interactive Live Class</p>
+                            <p class="info text-md">Interactive Live Class</p>
                         </div>
                         <div class="demo-info">
                             <span class="info-emoji">✔</span>
-                            <p class="info">Group Chat with members</p>
+                            <p class="info text-md">Group Chat with members</p>
                         </div>
                         <div class="demo-info">
                             <span class="info-emoji">✔</span>
-                            <p class="info">Pop-Quiz with Prices</p>
+                            <p class="info text-md">Pop-Quiz with Prices</p>
                         </div>
                         <div class="demo-info">
                             <span class="info-emoji">✔</span>
-                            <p class="info">Connecting with Pros</p>
+                            <p class="info text-md">Connecting with Pros</p>
                         </div>
                         <div class="demo-info">
                             <span class="info-emoji">✔</span>
-                            <p class="info">Pro ethics Training</p>
+                            <p class="info text-md">Pro ethics Training</p>
                         </div>
                         <div class="demo-info">
                             <span class="info-emoji">✔</span>
-                            <p class="info">LinkedIn profile setup</p>
+                            <p class="info text-md">LinkedIn profile setup</p>
                         </div>
                         <div class="demo-info">
-                            <p class="info">...and many more</p>
+                            <p class="info text-md">...and many more</p>
                         </div>
                     </aside>
                 </div>
             </div>
 
             <div id="pricing" class="pricing">
-                <div class="item">
-                    <span class="price">$14<sup>99</sup>/<sub>mo</sub></span>
-                    <img src="{% static 'images/programmer.jpg' %}" alt="" class="item-image"/>
-                    <div class="item-info">
-                        <p class="title">Web Design</p>
-                        <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem id rem sint vero voluptas saepe.</p>
+                <h2 class="title header-md w-600">PRICING</h2>
+                <div class="item w-full flex-s-c">
+                    <div class="price wh-max flex-c-c dir-col">
+                        <img src="{% static 'images/peep-1.jpg' %}" class="price-image" />
+                        <div class="price-info wh-max flex-c-c dir-col">
+                            <p class="header-sm">Graphics Design</p>
+                            <p style="color: var(--text-clr);" class="text-md">$20 <sup class="text-xsm">99</sup></p>
+                            <a href="{% url 'courses' %}" class="link link-md button">Start Now</a>
+                        </div>
                     </div>
-                    <a href="#" class="link">Get Started</a>
-                </div>
-                <div class="item">
-                    <span class="price">$14<sup>99</sup>/<sub>mo</sub></span>
-                    <img src="{% static 'images/immm.jpg' %}" alt="" class="item-image"/>
-                    <div class="item-info">
-                        <p class="title">Graphics Design</p>
-                        <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem id rem sint vero voluptas saepe.</p>
+                    
+                    <div class="price wh-max flex-c-c dir-col">
+                        <img src="{% static 'images/peep-3.jpg' %}" class="price-image" />
+                        <div class="price-info wh-max flex-c-c dir-col">
+                            <p class="header-sm">Network Marketing</p>
+                            <p style="color: var(--text-clr);" class="text-md">$25 <sup class="text-xsm">99</sup></p>
+                            <a href="#" class="link link-md button">Start Now</a>
+                        </div>
                     </div>
-                    <a href="#" class="link">Get Started</a>
-                </div>
-                <div class="item">
-                    <span class="price">$14<sup>99</sup>/<sub>mo</sub></span>
-                    <img src="{% static 'images/immmm.jpg' %}" alt="" class="item-image"/>
-                    <div class="item-info">
-                        <p class="title">Email Marketing</p>
-                        <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem id rem sint vero voluptas saepe.</p>
+                    
+                    <div class="price wh-max flex-c-c dir-col">
+                        <img src="{% static 'images/peep-2.jpg' %}" class="price-image" />
+                        <div class="price-info wh-max flex-c-c dir-col">
+                            <p class="header-sm">Email Marketing</p>
+                            <p style="color: var(--text-clr);" class="text-md">$15 <sup class="text-xsm">99</sup></p>
+                            <a href="#" class="link link-md button">Start Now</a>
+                        </div>
                     </div>
-                    <a href="#" class="link">Get Started</a>
-                </div>
-                <div class="item">
-                    <span class="price">$14<sup>99</sup>/<sub>mo</sub></span>
-                    <img src="{% static 'images/chat_img_1.jpg' %}" alt="" class="item-image"/>
-                    <div class="item-info">
-                        <p class="title">Network Marketing</p>
-                        <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem id rem sint vero voluptas saepe.</p>
-                    </div>
-                    <a href="#" class="link">Get Started</a>
                 </div>
             </div>
         </div>
 
-        <div id="contact" class="contact">
-            <div class="media">
-                <div class="item">
-                    <p class="via">
-                        <i class="icon fa fa-phone"></i>Phone Call: 
-                    </p>
-                    <span class="via-on">+234 903 910 8667</span>
-                </div>
-                <div class="item">
-                    <p class="via">
-                        <i class="icon fa fa-whatsapp"></i>WhatsApp on: 
-                    </p>
-                    <span class="via-on">+234 903 910 8667</span>
-                </div>
-                <div class="item">
-                    <p class="via">
-                        <i class="icon fa fa-send-o"></i>Email at: 
-                    </p>
-                    <span class="via-on">michochoprogrammer@gmail.com</span>
-                </div>
+        <div id="contact" class="contact flex-c-c">
+            <h3 class="info header-md w-600">CONTACT US</h3>
+            <div class="media flex-c-c dir-col">
+                <a href="#" class="item">
+                    <p class="via text-md w-600">Phone Call: </p>
+                    <span class="via-on text-sm">+234 903 910 8667</span>
+                </a>
+                <a href="#" class="item">
+                    <p class="via text-md w-600">WhatsApp on: </p>
+                    <span class="via-on text-sm">+234 903 910 8667</span>
+                </a>
+                <a href="#" class="item">
+                    <p class="via text-md w-600">Email at: </p>
+                    <span class="via-on text-sm">michochoprogrammer@gmail.com</span>
+                </a>
             </div>
-            <form action="#" class="form">
-                <span class="info">Contact Form</span>
-                <input type="text" placeholder="Full name" required />
-                <textarea placeholder="Content" maxlength="500" required></textarea>
-                <input type="email" placeholder="Email (Optional)" />
-                <button type="submit" class="submit">Send</button>
+            <form action="#" class="contact-form flex-c-c dir-col">
+                <input type="text" class="input" name="fullname" placeholder="Full name" required />
+                <input type="email" class="input" name="email" placeholder="Email" required/>
+                <textarea class="input" placeholder="Content" name="text" maxlength="1500" required></textarea>
+                <button type="submit" class="submit button button-md">Send</button>
             </form>
         </div>
 
@@ -241,7 +239,7 @@
                     <i class="icon fa fa-youtube"></i>
                 </a>
             </div>
-            <p class="copyright">Copyright 2022 &copy; michochoprogrammer</p>
+            <p class="copyright text-sm w-600">Copyright 2022 &copy; michochoprogrammer</p>
         </div>
     </div>
 </body>

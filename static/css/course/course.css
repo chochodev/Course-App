@@ -1,0 +1,75 @@
+#course-select {
+
+}
+
+/* TIPS SECTION */
+#course-select .tips {
+    height: max-content;
+    gap: .5rem;
+    padding: 2rem;
+}
+
+#course-select > .title,
+#course-select .tips .title {
+    letter-spacing: 3px;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(0, 0, 0, 0.5);
+    text-underline-offset: 2px;
+}
+
+#course-select .tips .tip {
+    list-style: disc;
+}
+
+#course-select > .title {
+    padding-left: 2rem;
+    margin: 0 auto;
+}
+
+/* COURSES SECTION */
+#course-select .courses {
+    padding: 2rem;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin: 0 auto;
+    max-width: 70rem;
+}
+
+#course-select .courses .title {
+    /* color: #fff; */
+}
+
+#course-select .courses .course {
+    flex-wrap: normal;
+    gap: 1rem;
+    height: calc(12rem + 2vw);
+    width: calc(12rem + 2vw);
+    padding: 0 2rem;
+    background: rgba(99, 91, 255, 0.25);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    outline: 2px solid rgba(99, 91, 255, 0.5);
+    border-radius: 1rem;
+}
+
+#course-select .courses .course:hover {
+    transition: background .2s ease-in-out !important;
+    background: rgba(99, 91, 255, 0.35);
+    outline: 2px solid var(--cta-clr);
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.5);
+}
+
+#course-select .courses .course:hover .title {
+    color: #000;
+}
+
+#course-select .courses .course .title {
+
+    /* color: var(--text-clr); */
+}
+
+#course-select .courses .course .info {
+    color: #fff;
+    font-weight: 400;
+}

@@ -17,37 +17,15 @@
         <div id="courses-background" class="background"></div>
     </div>
     <div class="items w-full flex-s-s dir-col">
+        {% for section in course_sections %}
         <div class="item w-full flex-s-s dir-col">
-            <span class="title text-md">Mod 1: Introduction to Graphics Design</span>
+            <span class="title text-md">Mod {{section.section_number}}: {{section.section_name}}</span>
             <div class="item-list flex-s-c dir-col">
-                <a href="#" class="a-link link link-md flex-s-s"><i class="icon fa fa-tag"></i> <p class="text">What is Graphics Design?</p></a>
-                <a href="#" class="a-link link link-md flex-s-s"><i class="icon fa fa-tag"></i> <p class="text">Is Graphics Design a skill worth learning?</p></a>
-                <a href="#" class="a-link link link-md flex-s-s"><i class="icon fa fa-tag"></i> <p class="text">What are the benefits of learning Graphics Design?</p></a>
-                <a href="#" class="a-link link link-md flex-s-s"><i class="icon fa fa-tag"></i> <p class="text">Who can earn a living from Graphics Design?</p></a>
-                <a href="#" class="a-link link link-md flex-s-s"><i class="icon fa fa-tag"></i> <p class="text">What level of tech expertise do I need for Graphics Design?</p></a>
+                {% for content in section.coursecontent_set.all %}
+                    <a href="#" class="a-link link link-md flex-s-s"><i class="icon fa fa-tag"></i> <p class="text">{{content.content_name}}</p></a>
+                {% endfor %}
             </div>
         </div>
-        
-        <div class="item w-full flex-s-s dir-col">
-            <span class="title text-md">Mod 1: Basics of Graphics Design</span>
-            <div class="item-list flex-s-c dir-col">
-                <a href="#" class="a-link link link-md flex-s-s"><i class="icon fa fa-tag"></i> <p class="text">What is needed Graphics Design?</p></a>
-                <a href="#" class="a-link link link-md flex-s-s"><i class="icon fa fa-tag"></i> <p class="text">Materials used in Graphics Design</p></a>
-                <a href="#" class="a-link link link-md flex-s-s"><i class="icon fa fa-tag"></i> <p class="text">First Graphics Design lesson</p></a>
-                <a href="#" class="a-link link link-md flex-s-s"><i class="icon fa fa-tag"></i> <p class="text">How to make a basic Flyer</p></a>
-                <a href="#" class="a-link link link-md flex-s-s"><i class="icon fa fa-tag"></i> <p class="text">How to convert a basic design into a Pro</p></a>
-            </div>
-        </div>
-        
-        <div class="item w-full flex-s-s dir-col">
-            <span class="title text-md">Mod 1: Introduction to Graphics Design</span>
-            <div class="item-list flex-s-c dir-col">
-                <a href="#" class="a-link link link-md flex-s-s"><i class="icon fa fa-tag"></i> <p class="text">What is Graphics Design?</p></a>
-                <a href="#" class="a-link link link-md flex-s-s"><i class="icon fa fa-tag"></i> <p class="text">Is Graphics Design a skill worth learning?</p></a>
-                <a href="#" class="a-link link link-md flex-s-s"><i class="icon fa fa-tag"></i> <p class="text">What are the benefits of learning Graphics Design?</p></a>
-                <a href="#" class="a-link link link-md flex-s-s"><i class="icon fa fa-tag"></i> <p class="text">Who can earn a living from Graphics Design?</p></a>
-                <a href="#" class="a-link link link-md flex-s-s"><i class="icon fa fa-tag"></i> <p class="text">What level of tech expertise do I need for Graphics Design?</p></a>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>

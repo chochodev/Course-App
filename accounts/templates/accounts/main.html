@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesignHive - Landing Page</title>
+    
+    <!-- CSS for main template -->
+    <link rel="stylesheet" href="{% static 'css/accounts/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/accounts/forgetpassword.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/accounts/forgetpasswordconfirm.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/accounts/forgetpasswordcomplete.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'fontawesome/css/solid.css' %}" />
+    <link rel="stylesheet" href="{% static 'fontawesome/css/brands.css' %}" />
+    <link rel="stylesheet" href="{% static 'fontawesome/css/fontawesome.css' %}" />
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}" />
+    <link rel="stylesheet" href="{% static 'fontawesome/css/v4-shims.css' %}" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Orbitron&family=Source+Sans+Pro&family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="main-content" class="content">
+    {% block content %}
+    {% endblock %}
+    </div>
+
+</body>
+
+{% block js %}
+    <script src="{% static 'js/accounts/forgetpassword.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+{% endblock %}
+</html>

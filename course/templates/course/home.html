@@ -3,6 +3,14 @@
 
 {% block content %}
 <div id="homepage" class="wh-full flex-c-c dir-col">
+    {% if messages %}
+    <!-- FOR SIGNED UP USERS REDIRECTED TO HOME PAGE -->
+    <ul id="server_messages" class="server_messages">
+        {% for message in messages %}
+        <li id="server_message" class="{% if message.tags %} {{message.tags}} {% endif %}">{{message}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
     <div class="main flex-s-s wh-full dir-col">
         <h3 class="title header-md">Start Making Progress</h3>
         <p class="text text-lg">Get started by clicking on any of your preferred course to learn below. Or Continue your online course</p>
@@ -12,32 +20,16 @@
     <div class="courses wh-full flex-c-c dir-col">
         <h3 class="text-lg w-max"><b style="color: var(--text-clr);" class="">New here?</b> Start a Course now</h3>
         <div class="course-list w-full flex-s-c">
+            {% for item in courses %}
             <div class="course wh-max flex-c-c dir-col">
                 <img src="{% static 'images/peep-1.jpg' %}" class="course-image" />
                 <div class="course-info wh-max flex-c-c dir-col">
-                    <p class="header-sm">Graphics Design</p>
-                    <p style="color: var(--text-clr);" class="text-md">$20 <sup class="text-xsm">99</sup></p>
+                    <p class="header-sm">{{ item.name }}</p>
+                    <p style="color: var(--text-clr);" class="text-md">{{item.main_price}}<sup class="text-xsm">{{item.frac_price}}</sup></p>
                     <a href="{% url 'courses' %}" class="link link-md button">Start Now</a>
                 </div>
             </div>
-            
-            <div class="course wh-max flex-c-c dir-col">
-                <img src="{% static 'images/peep-3.jpg' %}" class="course-image" />
-                <div class="course-info wh-max flex-c-c dir-col">
-                    <p class="header-sm">Network Marketing</p>
-                    <p style="color: var(--text-clr);" class="text-md">$25 <sup class="text-xsm">99</sup></p>
-                    <a href="#" class="link link-md button">Start Now</a>
-                </div>
-            </div>
-            
-            <div class="course wh-max flex-c-c dir-col">
-                <img src="{% static 'images/peep-2.jpg' %}" class="course-image" />
-                <div class="course-info wh-max flex-c-c dir-col">
-                    <p class="header-sm">Email Marketing</p>
-                    <p style="color: var(--text-clr);" class="text-md">$15 <sup class="text-xsm">99</sup></p>
-                    <a href="#" class="link link-md button">Start Now</a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 
@@ -81,4 +73,8 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/course/home.js' %}"></script>
 {% endblock %}

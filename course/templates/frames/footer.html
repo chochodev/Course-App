@@ -1,7 +1,7 @@
 {% load static %}
 
 {% block content %}
-<div class='footer flex-c-se {% if request.resolver_match.url_name == "courses" %}unfooter{% endif %}'>
+<div class='footer flex-c-se {% if request.resolver_match.url_name == "course" %}unfooter{% endif %}'>
     <div class='foot flex-c-s'>
         <span class="question text-sm flex-c-s">Payment question?
             <a href='#!' class='link .link-sm flex-c-c'>Payment Policy?</a>
@@ -20,7 +20,7 @@
     <div class='foot flex-c-sb'>
         <form class="newsletter">
             <input placeholder='Email' name="newsletter-email" class="input input-sm" />
-            <button style="margin-top: .25rem;" class='button button-sm w-full'>Suscribe to our Newsletter</button>
+            <button style="margin-top: .25rem;" class='newsletter-btn button button-sm w-full'>Suscribe to our Newsletter</button>
         </form>
         <div class='social-media-icons flex-c-se'>
             <a href='#' class="link">

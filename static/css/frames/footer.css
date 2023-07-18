@@ -6,6 +6,7 @@
     gap: 1em;
     background: var(--main-clr) !important;
     padding: 1em 15vw;
+    border-top: 1px solid rgba(0, 0, 0, 0.1)
 }
 
 /* REMOVE THE FOOTER */
@@ -30,6 +31,11 @@
 .footer .foot .question .link {
     height: 1.875rem;
     font-weight: 600;
+}
+
+/* NEWSLETTER SECTION */
+.footer .foot .newsletter-btn {
+    width: 100%;
 }
 
 /* SOCIAL MEDIA ICONS */

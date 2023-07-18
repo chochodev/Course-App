@@ -1,6 +1,8 @@
 #logo-design-image {
     width: 120px;
     height: 50px;
+    max-width: 120px;
+    max-height: 50px;
     object-fit: cover;
     object-position: center center;
     cursor: pointer;

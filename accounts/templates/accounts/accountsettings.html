@@ -97,12 +97,12 @@
         </div>
     </form>
 
-    <div class="title flex-c-sb logout-section">
+    <form method="POST" action="{% url 'accountsettings' %}" class="title flex-c-sb logout-section">
         {% csrf_token %}
         <span class="text header-lg">Logout Account</span>
         <div class="acc-cta w-full flex-e-e">
-            <a href="{% url 'logout' %}" type='submit' class="logout-btn button button-sm">Logout</a>
+            <button type='submit' name="logout" class="logout-btn button button-sm">Logout</button>
         </div>
-    </div>
+    </form>
 </div>
 {% endblock %}

@@ -2,7 +2,111 @@
 {% load static %}
 
 {% block content %}
-<div id="coursepage">
-    Course Page
+<div id="courses-page" class="wh-full flex-s-s">
+    {% include 'frames/coursenavbar.html' %}
+    <div class="course-section w-full flex-c-c dir-col">
+        <div class="navigation w-full flex-c-sb">
+            <button class="nav previous flex-c-c">
+                <i class="icon fa fa-chevron-left flex-c-c"></i>
+            </button>
+            <button id="courses-menubar" class="menubar">
+                <i class="icon fa fa-bars-staggered"></i>
+            </button>
+            <div class="nav-hero w-full flex-c-sb">
+                <a href="{% url 'home' %}" class="home flex-c-c button button-sm">Back to Home</a>
+                <a href="#" class="complete flex-c-e flex-tc">
+                    <i class="icon fa fa-star-o"></i>
+                    <span class="text text-md">Completed</span>
+                </a>
+            </div>
+            
+            <button class="nav next flex-c-c">
+                <i class="icon fa fa-chevron-right flex-c-c"></i>
+            </button>
+        </div>
+        <div class="media w-full dir-col">
+            <h2 class="title header-md">Mod 1: What are the benefits of learning Graphics Design?</h2>
+            <!-- VIDEO PLAYER -->
+            <video-js
+                id="my-video"
+                class="video-js"
+                controls
+                preload="auto"
+                poster="{% static 'images/peep-4.jpg' %}"
+                data-setup="{}"
+            >
+                <source src="{% static 'videos/coursevideo.mp4' %}" type="video/mp4" />
+                <!-- <source src="MY_VIDEO.webm" type="video/webm" /> -->
+                <p class="vjs-no-js">
+                <!-- To view this video please enable JavaScript, and consider upgrading to a
+                web browser that -->
+                Please enable internet connection and refresh the page.
+                </p>
+            </video-js>
+        </div>
+        <hr class="line-break">
+        <div class="comment-section flex-s-s dir-col">
+            <div class="post-comment flex-s-s">
+                <img src="{% static 'images/peep-3.jpg' %}" alt="" class="img"/>
+                <form class="input-section flex-s-s dir-col">
+                    <textarea placeholder="Say something" cols="60" rows="10" id="comment-input" class="comment-input text-md" ></textarea>
+                    <button class="submit button button-md" type="submit">Post</button>
+                </form>
+            </div>
+            <div class="comment-list flex-s-s dir-col">
+                <div class="comment flex-s-s">
+                    <img src="{% static 'images/peep-3.jpg' %}" alt="" class="img"/>
+                    <div class="info flex-s-s dir-col">
+                        <div class="account-info flex-c-s">
+                            <p class="name text-md">Michael Ayodeji</p>
+                            <span class="time text-sm">Oct 3, 2021</span>
+                        </div>
+                        <p class="text text-sm">This is hands down the best course I've ever come across in the internet!</p>
+                        <button class="reply link link-md"><i class="icon fa fa-reply"></i> Reply</button>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-list flex-s-s dir-col">
+                <div class="comment flex-s-s">
+                    <img src="{% static 'images/peep-2.jpg' %}" alt="" class="img"/>
+                    <div class="info flex-s-s dir-col">
+                        <div class="account-info flex-c-s">
+                            <p class="name text-md">Michael Ayodeji</p>
+                            <span class="time text-sm">Oct 3, 2021</span>
+                        </div>
+                        <p class="text text-sm">This is hands down the best course I've ever come across in the internet! This is hands down the best course I've ever come across in the internet! </p>
+                        <button class="reply link link-md"><i class="icon fa fa-reply"></i> Reply</button>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-list flex-s-s dir-col">
+                <div class="comment flex-s-s">
+                    <img src="{% static 'images/peep-1.jpg' %}" alt="" class="img"/>
+                    <div class="info flex-s-s dir-col">
+                        <div class="account-info flex-c-s">
+                            <p class="name text-md">Michael Ayodeji</p>
+                            <span class="time text-sm">Oct 3, 2021</span>
+                        </div>
+                        <p class="text text-sm">This is hands down the best course I've ever come across in the internet!</p>
+                        <button class="reply link link-md"><i class="icon fa fa-reply"></i> Reply</button>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-list flex-s-s dir-col">
+                <div class="comment flex-s-s">
+                    <img src="{% static 'images/peep-4.jpg' %}" alt="" class="img"/>
+                    <div class="info flex-s-s dir-col">
+                        <div class="account-info flex-c-s">
+                            <p class="name text-md">Michael Ayodeji</p>
+                            <span class="time text-sm">Oct 3, 2021</span>
+                        </div>
+                        <p class="text text-sm">This is hands down the best course I've ever come across in the internet!</p>
+                        <button class="reply link link-md"><i class="icon fa fa-reply"></i> Reply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 {% endblock %}

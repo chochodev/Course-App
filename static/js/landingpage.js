@@ -1,35 +1,51 @@
-const signup = document.getElementById('signup')
-const signin = document.getElementById('signin')
+const bgOverlay = document.getElementById('signing-background-overlay');
 
-const signupButton = document.getElementById('signup-button')
-const signinButton = document.getElementById('signin-button')
-const joinusButton = document.getElementById('joinus-button')
+const signup = document.getElementById('signup');
+const signin = document.getElementById('signin');
 
-const demoButton = document.getElementById('live-demo-button')
-const pricingButton = document.getElementById('pricing-button')
-const contactButton = document.getElementById('contact-us-button')
+const signupButton = document.getElementById('signup-button');
+const signinButton = document.getElementById('signin-button');
+const joinusButton = document.getElementById('joinus-button');
 
+const demoButton = document.getElementById('live-demo-button');
+const pricingButton = document.getElementById('pricing-button');
+const contactButton = document.getElementById('contact-us-button');
+
+// FOR TOGGLING THE FORMS
 signupButton.addEventListener('click', (e) => {
-    e.stopImmediatePropagation();
     signup.classList.toggle('un-signup');
     signin.classList.remove('un-signin');
+    updateBackgroundOverlay();
 })
 
 signinButton.addEventListener('click', (e) => {
-    e.stopImmediatePropagation();
     signin.classList.toggle('un-signin');
     signup.classList.remove('un-signup');
+    updateBackgroundOverlay();
 })
 
-const my_body = [signup, signin, demoButton, pricingButton, contactButton]
+// FOR REMOVING THE FORMS
+const my_body = [bgOverlay, demoButton, pricingButton, contactButton]
 
-// my_body.forEach(item => {
-//     item.addEventListener('click', (e) => {
-//         e.stopImmediatePropagation();
-//         signin.classList.remove('un-signin');
-//         signup.classList.remove('un-signup');
-//     });
-// });
+my_body.forEach(item => {
+    item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        console.log('click triggered')
+        signin.classList.remove('un-signin');
+        signup.classList.remove('un-signup');
+        updateBackgroundOverlay();
+    });
+});
+
+// FOR SHOWING THE BACKGROUND OVERLAY
+const updateBackgroundOverlay = () => {
+    if (signup.classList.contains('un-signup') || signin.classList.contains('un-signin')) {
+        bgOverlay.classList.add('show-signing-background-overlay');
+        console.log('active')
+    } else {
+        bgOverlay.classList.remove('show-signing-background-overlay');
+    }
+}
 
 // Toggle the event instead
 
@@ -51,3 +67,14 @@ myArray = [barsIcon, closeIcon, menuList];
         });
     });
 });
+
+
+// FOR THE SIGNUP and SIGNIN ERRORS
+const errorMessagesDiv = document.getElementById('server_messages');
+const errorMessages = document.querySelector('#server_messages.message');
+
+if (errorMessagesDiv) {
+    setTimeout(() => {
+        errorMessagesDiv.remove()
+    }, 5000);
+}
