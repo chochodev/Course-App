@@ -1,4 +1,4 @@
 /env
 /static/fontawesome
-__pycache__/
 /static/videos
+**/__pycache__/
