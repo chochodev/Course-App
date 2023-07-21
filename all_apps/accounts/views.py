@@ -20,9 +20,8 @@ class Account(View):
     def __init__(self):
         self.template_name = 'landingpage.html'
 
-    # @unauthenticated_user
     def get(self, request):
-        print('get request received')
+        
         return render(request, self.template_name)
         
     @method_decorator(never_cache, name='dispatch')

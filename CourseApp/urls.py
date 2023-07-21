@@ -6,4 +6,5 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('course/', include('course.urls')),
     path('', include('static_pages.urls')),
+    path('admin-panel/', include('admin_pages.urls')),
 ]
