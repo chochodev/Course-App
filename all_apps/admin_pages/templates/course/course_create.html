@@ -1,5 +1,6 @@
 {% extends 'shared_templates/main.html' %}
 
+{% block content %}
 <!-- CREATE PRODUCT FORM -->
 <form method="POST" action="#" enctype="multipart/form-data" class="product-form w-full flex-s-s dir-col">
     <div class="input-container flex-s-s dir-col">
@@ -35,3 +36,5 @@
 
     <button type="submit" class="product-cta button w-600 br-md">Save Changes</button>
 </form>
+
+{% endblock %}

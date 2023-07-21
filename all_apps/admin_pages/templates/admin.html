@@ -1,0 +1,15 @@
+{% extends 'shared_templates/main.html' %}
+
+{% block content %}
+
+<a href="{% url 'create_course' %}" class="link flex-c-sb {% if request.resolver_match.url_name == 'create_course' %} active-page {% endif %}">
+    <span id="" class="text link-md">Create</span>
+    <i class="icon fa fa-chevron-right"></i>
+</a>
+
+<a href="{% url 'edit_course' %}" class="link flex-c-sb {% if request.resolver_match.url_name == 'edit_course' %} active-page {% endif %}">
+    <span id="" class="text link-md">Edit</span>
+    <i class="icon fa fa-chevron-right"></i>
+</a>
+
+{% endblock%}

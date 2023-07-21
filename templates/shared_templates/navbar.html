@@ -27,6 +27,10 @@
                 <span id="" class="text link-md">About Us</span>
                 <i class="icon fa fa-chevron-right"></i>
             </a>
+            <a href="{% url 'admin' %}" class="link flex-c-sb {% if request.resolver_match.url_name == 'admin' %} active-page {% endif %}">
+                <span id="" class="text link-md">Admin</span>
+                <i class="icon fa fa-chevron-right"></i>
+            </a>
             <small class="menu-foot">Copyright 2022 &copy; chochoprogrammer</small>
         </div>
         <a href="#" id="notification-link" class="link notification flex-c-c">
