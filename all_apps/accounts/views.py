@@ -18,7 +18,7 @@ MESSAGE_TAGS = {
 
 class Account(View):
     def __init__(self):
-        self.template_name = 'accounts/landingpage.html'
+        self.template_name = 'landingpage.html'
 
     # @unauthenticated_user
     def get(self, request):
@@ -101,7 +101,7 @@ class Account(View):
 
 class AccountSettings(View):
     def __init__(self):
-        self.template_name = 'accounts/accountsettings.html'
+        self.template_name = 'accountsettings.html'
 
     @method_decorator(login_required(login_url='signup'))
     def dispatch(self, request, *args, **kwargs):
@@ -119,6 +119,6 @@ class AccountSettings(View):
             logout(request)
             logout_message = f'Successfully logged out as {username}'
             context = {'logout_message':logout_message}
-            return redirect('/accounts/home', context)
+            return redirect('/home', context)
         else: 
             return render(request, self.template_name)
