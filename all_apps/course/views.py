@@ -5,23 +5,6 @@ from django.contrib.auth.decorators import login_required
 from .models import *
 
 
-class HomePage(View):
-    def __init__(self):
-        self.template_name = 'course/home.html'
-    
-    @method_decorator(login_required(login_url='signup'))
-    def dispatch(self, request, *args, **kwargs):
-        return super().dispatch(request, *args, **kwargs)
-
-    def get(self, request):
-        # course_object = get_object_or_404(CourseHead)
-        course_head = CourseHead
-        courses = CourseHead.objects.all()
-
-        
-        context = {'courses':courses}
-        return render(request, self.template_name, context)
-
 class Courses(View):
     def __init__(self):
         self.template_name = 'course/courses.html'
@@ -68,18 +51,6 @@ class Course(View):
             
             context = {'course_head':course_head, 'course_sections':course_sections, 'course_contents':course_contents}
             return render(request, self.template_name, context)
-
-class About(View):
-    def __init__(self):
-        self.template_name = 'course/about.html'
-    
-    @method_decorator(login_required(login_url='signup'))
-    def dispatch(self, request, *args, **kwargs):
-        return super().dispatch(request, *args, **kwargs)
-
-    def get(self, request):
-
-        return render(request, self.template_name)
 
 class Notification(View):
     def __init__(self):

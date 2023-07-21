@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     'accounts',
     'course',
+    'static_pages',
 ]
 
 MIDDLEWARE = [
