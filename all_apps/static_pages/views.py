@@ -7,7 +7,7 @@ from course.models import CourseHead
 
 class HomePage(View):
     def __init__(self):
-        self.template_name = 'home.html'
+        self.template_name = 'pages/home.html'
     
     @method_decorator(login_required(login_url='signup'))
     def dispatch(self, request, *args, **kwargs):
@@ -24,7 +24,7 @@ class HomePage(View):
 
 class About(View):
     def __init__(self):
-        self.template_name = 'about.html'
+        self.template_name = 'pages/about.html'
     
     @method_decorator(login_required(login_url='signup'))
     def dispatch(self, request, *args, **kwargs):
