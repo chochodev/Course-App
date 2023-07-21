@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="{% static 'css/admin/admin.css' %}" />
     <link rel="stylesheet" href="{% static 'css/admin/course_create.css' %}" />
     <link rel="stylesheet" href="{% static 'css/admin/course_edit.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/frames/logo.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/course/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/admin/course_edit.css' %}" />
     
     <!-- FONTAWESOME ONLINE LINK -->
     <script src="https://kit.fontawesome.com/78fe799ed6.js" crossorigin="anonymous"></script>
@@ -30,22 +33,30 @@
       <nav id="nav-contents" class="nav-contents close h-full flex-s-s dir-col">
         {# LOGO && TITLE SECTION #}
         <div class="logo flex-c-c">
-            <h2 class="logo-title header-lg">DesignHive</h2>
+            {% comment %} <h2 class="logo-title header-lg">DesignHive</h2> {% endcomment %}
             {% include 'shared_templates/logo.html' %}
         </div>
         {# NAV LINKS #}
         <div class="nav-items w-full flex-js dir-col">
-            <a href="{% url 'home' %}" class="link w-full text-md w-600 button-md br-md {% if request.resolver_match.url_name == 'home' %} active {% endif %}">
+            <a href="{% url 'home' %}" class="link w-full flex-c-s text-md w-600 button-md br-md {% if request.resolver_match.url_name == 'home' %} active {% endif %}">
+                <i class="fa fa-home icon"></i>
                 <span id="" class="text link-md">Dashboard</span>
             </a>
-            <a href="{% url 'home' %}" class="link w-full text-md w-600 button-md br-md {% if request.resolver_match.url_name == 'home' %} active {% endif %}">
+            <a href="{% url 'home' %}" class="link w-full flex-c-s text-md w-600 button-md br-md {% if request.resolver_match.url_name == 'home' %} active {% endif %}">
+                <i class="fa fa-school icon"></i>
                 <span id="" class="text link-md">Courses</span>
             </a>
-            <a href="{% url 'home' %}" class="link w-full text-md w-600 button-md br-md {% if request.resolver_match.url_name == 'home' %} active {% endif %}">
+            <a href="{% url 'home' %}" class="link w-full flex-c-s text-md w-600 button-md br-md {% if request.resolver_match.url_name == 'home' %} active {% endif %}">
+                <i class="fa fa-users icon"></i>
                 <span id="" class="text link-md">Customers</span>
             </a>
-            <a href="{% url 'home' %}" class="link w-full text-md w-600 button-md br-md {% if request.resolver_match.url_name == 'home' %} active {% endif %}">
-                <span id="" class="text link-md">Home</span>
+            <a href="{% url 'home' %}" class="link w-full flex-c-s text-md w-600 button-md br-md {% if request.resolver_match.url_name == 'home' %} active {% endif %}">
+                <i class="fa fa-credit-card icon"></i>
+                <span id="" class="text link-md">Payment</span>
+            </a>
+            <a href="{% url 'home' %}" class="link exit w-full flex-c-s text-md w-600 button-md br-md {% if request.resolver_match.url_name == 'home' %} active {% endif %}">
+                <i class="fa fa-arrow-left icon"></i>
+                <span id="" class="text link-md">Exit</span>
             </a>
         </div>
       </nav>
