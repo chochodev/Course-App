@@ -49,7 +49,11 @@ class Course(View):
                     print(f'Course Contents \n{course_contents}')
             # print(f'\t{list(course_contents)} \n\t {type(course_contents)}')
             
-            context = {'course_head':course_head, 'course_sections':course_sections, 'course_contents':course_contents}
+            context = {
+                'course_head':course_head, 
+                'course_sections':course_sections, 
+                # 'course_contents':course_contents
+            }
             return render(request, self.template_name, context)
 
 class Notification(View):

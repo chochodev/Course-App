@@ -6,7 +6,6 @@ body {
     display: grid;
     grid-template-columns: max-content 1fr;
     overflow: hidden;
-    background-color: var(--main-clr);
 }
 
 /* NAVBAR SECTION */
@@ -95,7 +94,7 @@ body > .alert-admin .icon {
 }
 
 #admin-navbar .nav-contents {
-    background: var(--main-clr);
+    background: #ffffff;
     gap: 2rem;
     padding: 2rem 1rem;
 }
