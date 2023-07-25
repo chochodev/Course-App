@@ -1,0 +1,218 @@
+body {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    overflow: hidden;
+}
+
+/* NAVBAR SECTION */
+#admin-navbar {
+    position: relative;
+    z-index: 100;
+    min-height: 100vh;
+    height: 100%;
+    background-color: var(--main-clr);
+}
+
+/* MENU-BAR */
+#admin-navbar .menu-bar {
+    position: relative;
+    margin: .5rem;
+}
+
+#admin-navbar .menu-bar .icon {
+    border-radius: .25rem;
+    padding: .45rem .65rem;
+}
+
+#admin-navbar .menu-bar .icon.close {
+    display: none;
+}
+
+#admin-navbar .menu-bar:hover .icon {
+    background: var(--link-bg-hover);
+    transition: .1s ease-in-out !important;
+}
+
+/* FOR THE FLASH MESSAGES */
+body > .alert-admin {
+    z-index: 0;
+    /* display: none; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: .5rem;
+    height: 1.8rem;
+}
+
+body > .alert-admin .close {
+    position: absolute;
+    top: .15rem;
+    right: .5rem;
+    background: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    box-shadow: none;
+}
+
+body > .alert-admin .close:hover {
+    background: #d1d1d190;
+}
+
+body > .alert-admin.error {
+    background: var(--red);
+}
+
+body > .alert-admin .icon {
+    font-size: 1.2rem;
+    /* font-weight: 400; */
+    color: black;
+    margin: auto;
+}
+
+body > .alert-admin.success {
+    background: var(--green);
+}
+
+body > .alert-admin .icon {
+    color: white;
+}
+
+/*------------- WIDTH RESPONSIVENESS -------------*/
+.screen-sm {
+    display: none;
+}
+
+.screen-md {
+    display: flex;
+}
+
+#admin-navbar .nav-contents {
+    background: #ffffff;
+    gap: 2rem;
+    padding: 2rem 1rem;
+}
+
+/* LOGO SECTION */
+#admin-navbar .logo .logo-title {
+    color: var(--text-clr);
+}
+
+/* NAV LINKS */
+#admin-navbar .nav-contents .nav-items {
+    gap: 1rem;
+}
+
+#admin-navbar .nav-contents .nav-items .link {
+    gap: .75rem;
+    color: var(--link-clr);
+    background: #ffffff1c;
+}
+
+#admin-navbar .nav-contents .nav-items .link.exit {
+    color: var(--link2-hover);
+}
+
+#admin-navbar .nav-contents .nav-items .link:hover {
+    color: var(--link-clr);
+    background: var(--link-bg-hover);
+    transition: background-color .2s ease-in-out;
+}
+
+#admin-navbar .nav-contents .nav-items .link.exit:hover {
+    color: var(--red);
+    background: rgb(255, 0, 0, .1);
+}
+
+#admin-navbar .nav-contents .nav-items .link.active {
+    box-shadow: 0 0 2px 3px rgba(255, 255, 255, 0.35);
+}
+
+/* FOR BACKGROUND OVERLAY */
+#signing-background-overlay {
+    display: none;
+    position: absolute;
+    z-index: 30;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.2);
+    border-top: 1px solid #d1d1d1;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+#signing-background-overlay.show-signing-background-overlay {
+    display: block !important;
+}
+
+/* BLOCK CONTENTS */
+#block-content {
+    padding: 1rem 2rem;
+}
+
+/* FOR SEARCH FORM */
+#block-content .search-form {
+    position: relative;
+    padding: .5rem 0;
+}
+
+#block-content .search-form .input {
+    width: max-content;
+    min-width: 18rem;
+    padding: 0 .5rem;
+    height: 2.25rem;
+    border-radius: .25rem;
+}
+
+#block-content .search-form .search-cta {
+    position: absolute;
+    right: 0;
+    font-size: 1rem;
+    padding: 0 .5rem;
+}
+
+@media (max-width: 680px) {
+    .screen-sm {
+        display: flex;
+    }
+
+    .screen-md {
+        display: none;
+    }
+
+    #admin-navbar .nav-contents {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 90;
+        animation: animateNavContents .25s ease-in-out;
+    }
+
+    #admin-navbar .nav-contents.close {
+        display: none;
+        position: absolute;
+    }
+
+}
+
+
+@keyframes animateNavContents {
+    from {
+        transform: translateX(-1rem) translateY(-1rem);
+        opacity: 0;
+    }
+    to {
+        transfrom: translateX(0) translateY(0);
+        opacity: 1;
+    }
+    
+}

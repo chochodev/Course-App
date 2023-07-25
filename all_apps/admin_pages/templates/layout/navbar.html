@@ -1,0 +1,47 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/admin/layout/navbar.css' %}" />
+{% endblock %}
+
+{% block content %}
+{# HEADER SECTION #}
+<header id="admin-navbar" class="w-max flex-s-s dir-col">
+    <button id="menu-bar-btn" class="menu-bar screen-sm">
+        <i id="bars-icon" class="icon fa fa-bars text-lg"></i>
+        <i id="close-icon" class="icon close fa fa-times text-lg"></i>
+    </button>
+
+    {# NAVBAR SECTION #}
+    <nav id="nav-contents" class="nav-contents close h-full flex-s-s dir-col">
+      {# LOGO && TITLE SECTION #}
+      <div class="logo flex-c-c">
+          {% include 'shared_templates/logo.html' %}
+      </div>
+      {# NAV LINKS #}
+      <div class="nav-items w-full flex-js dir-col">
+          <a href="{% url 'home' %}" class="link w-full flex-c-s text-md w-600 button-md br-md {% if request.resolver_match.url_name == 'home' %} active {% endif %}">
+              <i class="fa fa-home icon"></i>
+              <span id="" class="text link-md">Dashboard</span>
+          </a>
+          <a href="{% url 'home' %}" class="link w-full flex-c-s text-md w-600 button-md br-md {% if request.resolver_match.url_name == 'home' %} active {% endif %}">
+              <i class="fa fa-school icon"></i>
+              <span id="" class="text link-md">Courses</span>
+          </a>
+          <a href="{% url 'home' %}" class="link w-full flex-c-s text-md w-600 button-md br-md {% if request.resolver_match.url_name == 'home' %} active {% endif %}">
+              <i class="fa fa-users icon"></i>
+              <span id="" class="text link-md">Customers</span>
+          </a>
+          <a href="{% url 'home' %}" class="link w-full flex-c-s text-md w-600 button-md br-md {% if request.resolver_match.url_name == 'home' %} active {% endif %}">
+              <i class="fa fa-credit-card icon"></i>
+              <span id="" class="text link-md">Payment</span>
+          </a>
+          <a href="{% url 'home' %}" class="link exit w-full flex-c-s text-md w-600 button-md br-md {% if request.resolver_match.url_name == 'home' %} active {% endif %}">
+              <i class="fa fa-arrow-left icon"></i>
+              <span id="" class="text link-md">Exit</span>
+          </a>
+      </div>
+    </nav>
+  </header>
+{% endblock %}
