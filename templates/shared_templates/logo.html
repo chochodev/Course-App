@@ -1,3 +1,10 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/logo.css' %}" />
-        <img id="logo-design-image" src="{% static 'images/logo.svg' %}" alt="">
+<img 
+    src="{% static 'images/logo.svg' %}" 
+    style="
+        width: max-content;
+        height: calc(1.5rem + 2vw);
+        min-height: 1.5rem;
+    "
+    alt="Logo" 
+/>

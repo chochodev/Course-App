@@ -18,6 +18,13 @@
     <!-- FONTAWESOME ONLINE LINK -->
     <script src="https://kit.fontawesome.com/78fe799ed6.js" crossorigin="anonymous"></script>
 
+    <!-- FONTAWESOME LOCAL DEV LINK -->
+    <link rel="stylesheet" href="{% static 'fontawesome/css/solid.css' %}" />
+    <link rel="stylesheet" href="{% static 'fontawesome/css/brands.css' %}" />
+    <link rel="stylesheet" href="{% static 'fontawesome/css/fontawesome.css' %}" />
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}" />
+    <link rel="stylesheet" href="{% static 'fontawesome/css/v4-shims.css' %}" />
+
     <title>Admin Dashboard</title>
 
   </head>
@@ -33,7 +40,6 @@
       <nav id="nav-contents" class="nav-contents close h-full flex-s-s dir-col">
         {# LOGO && TITLE SECTION #}
         <div class="logo flex-c-c">
-            {% comment %} <h2 class="logo-title header-lg">DesignHive</h2> {% endcomment %}
             {% include 'shared_templates/logo.html' %}
         </div>
         {# NAV LINKS #}

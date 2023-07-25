@@ -3,15 +3,7 @@
 <header class="navbar flex-c-sb {% if request.resolver_match.url_name == 'course' %} close {% endif %}">
     <!-- LOGO SECTION -->
     <div class="logo">
-        <img 
-            src="{% static 'images/logo.svg' %}" 
-            style="
-                width: max-content;
-                height: calc(1.5rem + 2vw);
-                min-height: 1.5rem;
-            "
-            alt="Logo" 
-        />
+        {% include 'shared_templates/logo.html' %}
     </div>
     <nav id="nav-menu" class="menu flex-c-sb">
         <div class="menu-bar flex-c-c">
