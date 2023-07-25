@@ -3,7 +3,7 @@
     z-index: 100;
     top: 0;
     left: 0;
-    padding: .25em 1.5em .25em .5em;
+    padding: .25rem 1.5rem .25rem .5rem;
     height: max-content;
     background: var(--main-clr);
     border-bottom: 1px solid var(--cta-border);
@@ -86,23 +86,66 @@
     height: 1.8rem;
 }
 
-.navbar .menu .notification:hover {
-    animation: wiggleNotification .25s infinite 4s;
+.navbar .menu .notification:hover .notification-icon {
+    animation: wiggleNotification 1.5s 2s 2;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+@keyframes wiggleNotification {
+    0% {
+        transform: rotateZ(0);
+    }
+    5% {
+        transform: rotateZ(-30deg);
+    }
+    10% {
+        transform: rotateZ(30deg);
+    }
+    15% {
+        transform: rotateZ(-30deg);
+    }
+    20% {
+        transform: rotateZ(30deg);
+    }
+    25% {
+        transform: rotateZ(-30deg);
+    }
+    30% {
+        transform: rotateZ(30deg);
+    }
+    35% {
+        transform: rotateZ(-30deg);
+    }
+    40% {
+        transform: rotateZ(30deg);
+    }
+    45% {
+        transform: rotateZ(0);
+    }
+    100% {
+        transform: rotateZ(0);
+    }
 }
 
 .navbar .menu .notification .number {
+    z-index: 2;
     position: absolute;
     top: 0;
     right: .05rem;
     width: .65rem;
-    height: .65rem;
+    font-size: .55rem;
+    font-weight: 700;
+    height: max-content;
+    width: max-content;
+    padding: .1rem;
     border-radius: 50%;
     background: #FF6F00;
     border: 1px solid #fff;
 }
 
-.navbar .menu .notification .icon {
-    font-size: 1.25rem;
+.navbar .menu .notification .notification-icon {
+    font-size: 1.5rem;
+    color: var(--link-clr); 
 }
 
 
@@ -222,10 +265,10 @@
 
 
 
-
-
-
 /* NOTIFICATION ANIMATION */
+
+/* 
+
 @keyframes wiggleNotification {
     0% {
         transform: rotate(5deg)
@@ -242,4 +285,4 @@
     100% {
         transform: rotate(0)
     }
-}
+} */

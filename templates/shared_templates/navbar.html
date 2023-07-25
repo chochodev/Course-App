@@ -1,10 +1,19 @@
 {% load static %}
 
-<div class="navbar flex-c-sb {% if request.resolver_match.url_name == 'course' %} close {% endif %}">
+<header class="navbar flex-c-sb {% if request.resolver_match.url_name == 'course' %} close {% endif %}">
+    <!-- LOGO SECTION -->
     <div class="logo">
-        {% include 'shared_templates/logo.html' %}
+        <img 
+            src="{% static 'images/logo.svg' %}" 
+            style="
+                width: max-content;
+                height: calc(1.5rem + 2vw);
+                min-height: 1.5rem;
+            "
+            alt="Logo" 
+        />
     </div>
-    <div id="nav-menu" class="menu flex-c-sb">
+    <nav id="nav-menu" class="menu flex-c-sb">
         <div class="menu-bar flex-c-c">
             <i id="menu-bar" class="icon icon-md fa fa-bars-staggered"></i>
             <i id="close-bar" class="icon icon-md fa fa-times"></i>
@@ -33,11 +42,11 @@
             </a>
             <small class="menu-foot">Copyright 2022 &copy; chochoprogrammer</small>
         </div>
-        <a href="#" id="notification-link" class="link notification flex-c-c">
-            <small class="number"></small>
-            <i class="icon notification-icon fa fa-bell"></i>
+        <a href="#" id="notification-link" class="notification flex-c-c">
+            <small class="number">10</small>
+            <i class="notification-icon fa fa-bell"></i>
         </a>
-    </div>
+    </nav>
 </div>
 
 <div id="notification" class="notification-bg flex-s-e">
@@ -78,7 +87,7 @@
             </div>
         </div>
     </div>
-</div>
+</header>
 
 {% block js %}
     <script src="{% static 'js/navbar.js' %}"></script>
