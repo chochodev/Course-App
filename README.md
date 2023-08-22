@@ -1,4 +1,7 @@
-#### michochoprogrammer
+## Needs improvement on backend
+- Migrating to DesignHive[https://github.com/chochoprogrammer/Course-App_MVT]
+
+#### michochoprogrammer@gmail.com
 
 # DesignHive 
 DesignHive is a course web application for learning technology based remote skill like graphic design, web design, network marketing and the likes. It is a smart dynamic course app which tracks your progress, gives professional tips on productivity, and even offer job offers if available after the end of any course on DesignHive. 
@@ -61,3 +64,6 @@ To signup, fill the credentials with the appropriate format. A flash message wil
 
 ### Start Course
 To start a course, navigate to the course page and choose among the available courses.
+
+## Needs improvement on backend
+- Migrating to DesignHive[https://github.com/chochoprogrammer/Course-App_MVT]
